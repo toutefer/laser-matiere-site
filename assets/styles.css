@@ -1375,6 +1375,27 @@ main.section {
     padding-top: 60px !important;
   }
 }
+/* --- Test : neutraliser tout espace en haut sur mobile --- */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  header, .header {
+    margin: 0 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  main, .hero {
+    margin-top: 60px !important; /* espace pour laisser passer le header */
+    padding-top: 0 !important;
+  }
+}
 
 
 
