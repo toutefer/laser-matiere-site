@@ -1228,7 +1228,7 @@ main.section {
   display: block;
   margin: 0 auto;
   transform: translateX(-2px); /* 🔹 ajustement fin du centrage */
-}}
+}
 /* --- AMÉLIORATIONS RESPONSIVE POUR MOBILE (smartphones) --- */
 @media (max-width: 768px) {
   
@@ -1293,68 +1293,36 @@ main.section {
     padding: 10px 20px;
     display: flex;
     z-index: 15;
-}/* --- AMÉLIORATIONS RESPONSIVE POUR MOBILE (smartphones) --- */
-@media (max-width: 768px) {
-  
-  /* 1. CONTENEUR GENERAL : Réduit l'espace autour du contenu */
-  .container {
-    padding: 0 10px; /* Plus petit padding sur les bords */
-  }
-  
-  /* 2. NAVIGATION : Cache les liens pour laisser la place au logo */
-  .nav-links {
-    display: none;
-  }
-  
-  /* 3. NAVIGATION : Affiche le bouton du menu mobile (le ☰) */
-  .menu-btn {
-    display: block; 
-  }
-
-  /* 4. LOGO : Réduit la taille du logo pour qu'il tienne à côté du menu */
-  .logo-lm {
-    height: 48px; 
-    margin-right: 10px;
-  }
-
-  /* 5. GRILLES DU HERO : Force la grille principale de la section Hero (logo/texte + diaporama) à s'afficher en colonne */
-  .hero .container.grid2 {
-    grid-template-columns: 1fr; 
-  }
-  
-  /* 6. CARTES : Force les cartes (Pourquoi graver, Services Pro) à s'empiler sur une seule colonne */
-  .cards.three,
-  .cards.four {
-    grid-template-columns: 1fr !important;
-  }
-  
-  /* 7. DIAPORAMA : Assure que le diaporama utilise toute la largeur sans déborder */
-  .mock.shadow-xl {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    /* Réduit l'espace vertical */
-    top: 0; 
-  }
-  
-  /* 8. SNAPCODE : Supprime la marge qui le décalait vers la droite sur l'accueil */
-  .snap-inline {
-    margin-left: 0;
-  }
 }
-
-/* Rend le menu mobile visible verticalement quand le JavaScript lui ajoute la classe .show */
-#navLinks.show {
-    position: absolute;
-    top: 64px; 
-    left: 0;
-    right: 0;
-    width: 100%;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 10px 20px;
+/* 🔹 Mise en page mobile : boutons en colonne propre */
+@media screen and (max-width: 768px) {
+  .realisations-grid {
     display: flex;
-    z-index: 15;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .real-btn {
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  img {
+    max-width: 90% !important;
+    height: auto;
+  }
+
+  body.dark-theme {
+    overflow-x: hidden;
+  }
+
+  .new-note {
+    font-size: 12px;
+    text-align: center;
+    display: block;
+  }
 }
