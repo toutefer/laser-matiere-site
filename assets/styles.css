@@ -1020,6 +1020,23 @@ main.section {
   margin-top: 30px;
 }
 
+/* === Placement des boutons de réalisations sur la gauche de l’écran === */
+.realisations-grid {
+  position: fixed;        /* on les fixe sur l’écran */
+  top: 50%;               /* les place verticalement au milieu */
+  left: 20px;             /* distance du bord gauche */
+  transform: translateY(-50%); /* centre verticalement */
+  display: flex;
+  flex-direction: column; /* les empile verticalement */
+  gap: 10px;              /* espace entre les boutons */
+  z-index: 10;            /* au-dessus du contenu */
+}
+
+/* On réduit un peu leur taille pour que ce soit joli en colonne */
+.realisations-grid .real-btn {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
 /* --- Alignement du texte à côté du bouton 3D --- */
 .btn-3d {
   display: flex;
@@ -1315,21 +1332,36 @@ main.section {
     display: block;
   }
 }
-/* --- Appliquer le menu flottant UNIQUEMENT sur ORDINATEUR (grand écran > 900px) --- */
-@media (min-width: 900px) { 
-  .realisations-grid {
-    position: fixed;            /* Position fixe sur grand écran */
-    top: 50%;                   
-    left: 20px;             
-    transform: translateY(-50%); 
-    flex-direction: column;     /* Empilement vertical */
-    gap: 10px;              
-    z-index: 10;            
-    padding: 0;
-  }
-  .realisations-grid .real-btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
+/* === Effet d'éclat laser pro sur le bouton "Demander un tarif Pro" === */
+.btn-primary[href="#contact"] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
 }
+
+.btn-primary[href="#contact"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px; /* épaisseur du contour lumineux */
+  background: linear-gradient(130deg, #00d4ff, #a855f7, #00d4ff);
+  background-size: 200% 200%;
+  animation: proGlow 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+@keyframes proGlow {
+  0%   { background-position: 200% 0; }
+  50%  { background-position: 0 100%; }
+  100% { background-position: 200% 0; }
+}
+
+
 
