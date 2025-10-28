@@ -1326,3 +1326,54 @@ main.section {
     display: block;
   }
 }
+/* === 📱 Correction responsive mobile pour les pages de réalisations === */
+@media screen and (max-width: 768px) {
+  .realisations-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 14px !important;
+    margin-top: 25px !important;
+    width: 100% !important;
+  }
+
+  .real-btn {
+    display: block !important;
+    width: 80% !important;
+    max-width: 320px !important;
+    text-align: center !important;
+    font-size: 16px !important;
+    padding: 12px 0 !important;
+    border-radius: 12px !important;
+  }
+
+  img {
+    display: block !important;
+    max-width: 90% !important;
+    height: auto !important;
+    margin: 0 auto 15px !important;
+    border-radius: 14px !important;
+  }
+
+  .new-note {
+    display: block !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    margin-top: 4px !important;
+  }
+
+  header.navbar,
+  .logo-area,
+  nav.menu {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 6px !important;
+  }
+
+  footer {
+    font-size: 13px !important;
+    padding: 20px !important;
+  }
+}
