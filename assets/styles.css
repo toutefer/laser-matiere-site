@@ -1369,6 +1369,13 @@ main.section {
     padding-top: 60px !important;  /* espace raisonnable sous la barre de menu */
   }
 }
+@media (max-width: 768px) {
+  main.section {
+    margin-top: 0 !important;
+    padding-top: 60px !important;
+  }
+}
+
 
 
 
