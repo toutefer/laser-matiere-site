@@ -19,6 +19,34 @@
 }
 </style>
   
+<style>
+@media (max-width: 768px) {
+  /* Correction douce du diaporama sur mobile */
+  .mock-slider, .slides {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slides img {
+    width: 95%;
+    height: auto;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 10px;
+  }
+
+  /* Réduit légèrement les marges autour du bloc pour centrer */
+  .mock {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+</style>
 
 
 </head>
