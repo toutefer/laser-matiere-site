@@ -1396,6 +1396,25 @@ main.section {
     padding-top: 0 !important;
   }
 }
+/* --- Correction du header sur mobile dans les galeries --- */
+@media (max-width: 768px) {
+  header.header {
+    position: relative !important; /* évite qu’il flotte au-dessus du contenu */
+    z-index: 10;
+    margin-bottom: 0 !important;
+  }
+
+  main.section, section.section {
+    margin-top: 0 !important;  /* enlève les marges qui poussent le contenu vers le bas */
+    padding-top: 20px !important; /* petit espace propre sous le header */
+  }
+
+  .hero {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+}
+
 
 
 
