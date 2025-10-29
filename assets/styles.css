@@ -1393,6 +1393,22 @@ main.section {
     padding-top: 8px !important;
   }
 }
+/* Correction : rendre le haut plus visible sur mobile */
+@media (max-width: 768px) {
+  .hero, .header, .container, main, section {
+    margin-top: 0 !important;
+    padding-top: 40px !important;
+  }
+
+  .hero h1, .hero h2, .hero p {
+    text-align: center !important;
+  }
+
+  body {
+    scroll-padding-top: 60px !important;
+  }
+}
+
 
 
 
