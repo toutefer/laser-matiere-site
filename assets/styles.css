@@ -1396,26 +1396,19 @@ main.section {
     padding-top: 0 !important;
   }
 }
-/* --- Correction du header sur mobile dans les galeries --- */
+/* --- Cacher le logo et le header sur mobile --- */
 @media (max-width: 768px) {
-  header.header {
-    position: relative !important; /* évite qu’il flotte au-dessus du contenu */
-    z-index: 10;
-    margin-bottom: 0 !important;
+  header, .navbar, .header, .logo-area, .logo-zone {
+    display: none !important;  /* cache complètement le haut du site sur téléphone */
   }
 
-  main.section, section.section {
-    margin-top: 0 !important;  /* enlève les marges qui poussent le contenu vers le bas */
-    padding-top: 20px !important; /* petit espace propre sous le header */
+  body.dark-theme {
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  .hero {
-    padding-top: 0 !important;
+  main.section {
     margin-top: 0 !important;
+    padding-top: 10px !important;
   }
 }
-
-
-
-
-
