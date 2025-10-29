@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://toutefer.github.io/laser-matiere-site/sitemap.txt
