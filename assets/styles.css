@@ -1507,6 +1507,50 @@ main.section {
     padding: 0 10px;
   }
 }
+/* --- Correction du diaporama (index.html) sur mobile --- */
+@media (max-width: 768px) {
+
+  /* Force la grille à devenir une seule colonne */
+  .grid2 {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 20px !important;
+  }
+
+  /* Le bloc du diaporama */
+  .mock {
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+  }
+
+  .mock-slider, .slides {
+    width: 100% !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: column !important;
+  }
+
+  .mock-slider img, .slides img {
+    width: 95% !important;
+    max-width: 380px !important;
+    height: auto !important;
+    margin: 0 auto 10px !important;
+    display: block !important;
+    border-radius: 10px;
+  }
+
+  .mock-title {
+    text-align: center !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 10px !important;
+  }
+}
 
 
 
