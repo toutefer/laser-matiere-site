@@ -1412,3 +1412,35 @@ main.section {
     padding-top: 10px !important;
   }
 }
+/* --- FORCER : cacher header / logo uniquement sur mobile (IMPORTANT : placer en fin du fichier) --- */
+@media (max-width: 768px) {
+  /* cible large + différentes classes utilisées dans tes fichiers */
+  header, header.header, header.navbar, .navbar, .header,
+  .logo-area, .logo-zone, .brand, .nav, .container.nav, .nav-links {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* s'assurer que le menu bouton mobile n'apparaît pas non plus */
+  .menu-btn, #menuBtn {
+    display: none !important;
+    height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* remonter le contenu principal */
+  body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  main, main.section, #top, .hero {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+  }
+}
+
