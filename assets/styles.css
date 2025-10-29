@@ -1472,5 +1472,41 @@ main.section {
     margin: 0 auto;
   }
 }
+/* --- Correction du diaporama (page d'accueil) sur mobile --- */
+@media (max-width: 768px) {
+  /* Cible le diaporama principal de la home */
+  .hero, .slider, .gallery, .realisations, .carousel {
+    width: 100% !important;
+    overflow: hidden !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  /* Corrige les images à l’intérieur */
+  .hero img,
+  .slider img,
+  .gallery img,
+  .realisations img,
+  .carousel img {
+    width: 95% !important;      /* s’adapte à l’écran */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Centrer les titres et descriptions sous le diaporama */
+  .hero h2, .hero p,
+  .realisations h2, .realisations p {
+    text-align: center !important;
+    padding: 0 10px;
+  }
+}
+
 
 
