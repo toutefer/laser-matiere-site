@@ -1443,4 +1443,34 @@ main.section {
     padding-top: 8px !important;
   }
 }
+/* --- Correction du décalage des images / diaporamas sur mobile --- */
+@media (max-width: 768px) {
+  .section img,
+  .container img,
+  .gallery img,
+  .slider img,
+  img {
+    max-width: 95% !important;   /* les images prennent presque toute la largeur */
+    height: auto !important;     /* garde le bon ratio */
+    display: block !important;   /* évite les espaces à droite/gauche */
+    margin: 0 auto !important;   /* centre les images */
+    border-radius: 12px;         /* joli arrondi */
+  }
+
+  .section, .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+
+  /* Si tu as un diaporama (slider) avec boutons ou flèches */
+  .slider, .gallery {
+    overflow: hidden;
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+
 
