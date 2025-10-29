@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://toutefer.github.io/laser-matiere-site/</loc></url>
-  <url><loc>https://toutefer.github.io/laser-matiere-site/bois.html</loc></url>
-  <url><loc>https://toutefer.github.io/laser-matiere-site/acrylique.html</loc></url>
-  <url><loc>https://toutefer.github.io/laser-matiere-site/metal.html</loc></url>
-  <url><loc>https://toutefer.github.io/laser-matiere-site/cuir.html</loc></url>
-  <url><loc>https://toutefer.github.io/laser-matiere-site/outil.html</loc></url>
-  <url><loc>https://toutefer.github.io/laser-matiere-site/toile.html</loc></url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/</loc>
+  </url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/bois.html</loc>
+  </url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/acrylique.html</loc>
+  </url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/metal.html</loc>
+  </url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/cuir.html</loc>
+  </url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/outil.html</loc>
+  </url>
+  <url>
+    <loc>https://toutefer.github.io/laser-matiere-site/toile.html</loc>
+  </url>
 </urlset>
