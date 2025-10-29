@@ -1408,6 +1408,28 @@ main.section {
     scroll-padding-top: 60px !important;
   }
 }
+/* --- Correction affichage mobile : titre caché en haut --- */
+@media (max-width: 768px) {
+  header, .header {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  main, .hero, .container {
+    margin-top: -40px !important; /* remonte le contenu */
+    padding-top: 10px !important;
+  }
+
+  h1, h2, .hero-text {
+    text-align: center !important;
+    margin-top: 0 !important;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
 
 
 
