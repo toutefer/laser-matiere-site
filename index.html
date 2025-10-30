@@ -297,16 +297,22 @@
             <a class="btn btn-ghost" href="mailto:laser.matiere@gmail.com">✉️ laser.matiere@gmail.com</a>
             </div>
         </div>
-        <form action="https://formspree.io/f/movpnwpo" method="POST">
-      
+        
+          <form action="https://formspree.io/f/movpnwpo" method="POST" enctype="multipart/form-data">
   <label for="name">Nom :</label>
   <input type="text" id="name" name="name" required>
 
   <label for="email">Email :</label>
   <input type="email" id="email" name="email" required>
 
+  <label for="subject">Objet :</label>
+  <input type="text" id="subject" name="subject" placeholder="Ex : Gravure sur bois / logo / PS5" required>
+
   <label for="message">Message :</label>
-  <textarea id="message" name="message" rows="5" required></textarea>
+  <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet" required></textarea>
+
+  <label for="file">Joindre un fichier (image, logo, plan...) :</label>
+  <input type="file" id="file" name="file">
 
   <button type="submit">Envoyer</button>
 </form>
