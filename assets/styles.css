@@ -684,21 +684,23 @@ width: 200px;
 
 @keyframes slide {
   0%   { transform: translateX(0%); }        /* image 1 */
-  16%  { transform: translateX(0%); }
+  13%  { transform: translateX(0%); }
 
-  20%  { transform: translateX(-100%); }     /* image 2 */
-  36%  { transform: translateX(-100%); }
+  16%  { transform: translateX(-100%); }     /* image 2 */
+  29%  { transform: translateX(-100%); }
 
-  40%  { transform: translateX(-200%); }     /* image 3 */
-  56%  { transform: translateX(-200%); }
+  32%  { transform: translateX(-200%); }     /* image 3 */
+  45%  { transform: translateX(-200%); }
 
-  60%  { transform: translateX(-300%); }     /* image 4 */
-  76%  { transform: translateX(-300%); }
+  48%  { transform: translateX(-300%); }     /* image 4 */
+  61%  { transform: translateX(-300%); }
 
-  80%  { transform: translateX(-400%); }     /* image 5 */
-  92%  { transform: translateX(-400%); }
+  64%  { transform: translateX(-400%); }     /* image 5 */
+  77%  { transform: translateX(-400%); }
 
-  96%  { transform: translateX(-500%); }     /* image 6 */
+  80%  { transform: translateX(-500%); }     /* image 6 */
+  93%  { transform: translateX(-500%); }
+
   100% { transform: translateX(0%); }        /* retour à la première */
 }
 
