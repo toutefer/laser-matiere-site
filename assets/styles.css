@@ -660,7 +660,7 @@ width: 200px;
 .mock-slider .slides {
   display: flex;
   width: 600%; /* 6 images */
-  animation: slide 24s infinite ease-in-out;
+  animation: slide 34s infinite ease-in-out;
 }
 
 /* Chaque image dans le diaporama */
