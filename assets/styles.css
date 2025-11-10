@@ -1565,9 +1565,9 @@ main.section {
     background-position: 0 0;
   }
 }
-/* Masquer le menu dans les pages galerie */
-.page-galerie .topnav {
-    display: none !important;
+/* Cacher uniquement les liens de menu sur les pages galerie */
+.page-galerie header.navbar nav.menu {
+  display: none !important;
 }
 
 
