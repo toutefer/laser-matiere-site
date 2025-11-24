@@ -71,4 +71,36 @@
             <video muted>
                 <source src="assets/video1.mp4" type="video/mp4">
             </video>
-            <p class="vid
+            <p class="video-title">Gravure sur bouteille</p>
+        </div>
+
+        <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', 'Découpe bois 40W')">
+            <video muted>
+                <source src="assets/video2.mp4" type="video/mp4">
+            </video>
+            <p class="video-title">Découpe bois 40W</p>
+        </div>
+
+        <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Gravure métal 2W')">
+            <video muted>
+                <source src="assets/video3.mp4" type="video/mp4">
+            </video>
+            <p class="video-title">Gravure métal 2W</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+function changeVideo(src, title) {
+    const main = document.getElementById('mainPlayer');
+    main.pause();
+    main.querySelector('source').src = src;
+    main.load();
+    main.play();
+    document.querySelector('.video-main .video-title').textContent = title;
+}
+</script>
+
+</body>
+</html>
