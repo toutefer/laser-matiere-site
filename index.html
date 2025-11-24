@@ -45,29 +45,31 @@
 }
 
 /* ---- MOBILE ---- */
-/* ---- Animation pulse plus visible ---- */
+/* ---- Animation pulse avec pause 3s ---- */
 @keyframes pulseMobileBanner {
   0%   { opacity: 0.35; }
-  50%  { opacity: 1; }      /* 🔥 apparaît bien */
-  100% { opacity: 0.35; }
+  20%  { opacity: 1; }      /* apparaît */
+  60%  { opacity: 1; }      /* 🔥 reste visible 2-3 sec */
+  100% { opacity: 0.35; }   /* disparaît */
 }
 
 /* ---- MOBILE ---- */
 @media (max-width: 768px) {
   .bandeau-info-left,
   .bandeau-info-right {
-    background: rgba(255, 204, 0, 0.55); /* 🔥 plus visible */
+    background: rgba(255, 204, 0, 0.55);
     backdrop-filter: blur(6px);
     font-size: 12px;
     padding: 7px 12px;
     max-width: 150px;
     border-radius: 5px;
-    box-shadow: 0 0 12px rgba(255,255,255,0.4); /* halo blanc léger */
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
     top: 10px;
-    opacity: 0.8; /* base plus forte */
-    animation: pulseMobileBanner 2.2s ease-in-out infinite; /* 🔥 clignote plus */
+    opacity: 0.8;
+    animation: pulseMobileBanner 5s ease-in-out infinite; /* 🔥 reste visible + longtemps */
   }
 }
+
 
 
   </style>
