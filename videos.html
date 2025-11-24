@@ -6,6 +6,20 @@
   <title>Vidéos – Laser & Matière</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    /* Fond bleu animé uniquement pour la page vidéos */
+body.fond-videos {
+    background: linear-gradient(135deg, #001f3f, #003366, #00509e);
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+    color: white;
+    min-height: 100vh;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
     /* STYLE SPECIFIQUE A LA PAGE VIDEOS */
     .video-main {
         max-width: 850px;
@@ -49,7 +63,8 @@
     }
   </style>
 </head>
-<body>
+<body class="fond-videos">
+
 
 <header>
   <h1 class="title-lg laser-title" style="text-align:center; margin-top:40px;">
@@ -104,4 +119,5 @@ function changeVideo(src, title) {
 
 </body>
 </html>
+
 
