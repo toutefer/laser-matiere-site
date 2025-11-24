@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidéos – Laser & Matière</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Galerie Vidéos – Laser & Matière</title>
+
+  <link rel="stylesheet" href="assets/styles.css">
 
   <style>
 
-    /* ---- FOND IMAGE ---- */
-    body.fond-videos {
+    /* --- FOND AVEC TON IMAGE --- */
+    body {
       background: url("assets/images/fond_video.jpg") no-repeat center center fixed;
       background-size: cover;
       color: white;
       font-family: Arial, sans-serif;
     }
 
-    /* ---- WRAPPER ---- */
     .video-page-wrapper {
       max-width: 1100px;
       margin: 0 auto;
       padding: 40px 20px;
-      backdrop-filter: blur(2px);
     }
 
-    /* ---- TITRE ---- */
+    /* --- TITRE --- */
     .video-title-main {
       text-align: center;
-      font-size: 2em;
+      font-size: 2.2em;
       margin-bottom: 30px;
-      text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
+      text-shadow: 0 0 10px rgba(0,255,255,0.8);
     }
 
-    /* ---- VIDÉO PRINCIPALE ---- */
+    /* --- LECTEUR PRINCIPAL (PC seulement) --- */
     .video-main {
       max-width: 900px;
-      margin: 0 auto;
+      margin: 0 auto 40px auto;
       text-align: center;
     }
 
     .video-main video {
       width: 100%;
       border-radius: 18px;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+      box-shadow: 0 0 25px rgba(0,255,255,0.3);
     }
 
     .video-main p {
       margin-top: 10px;
-      color: #eaeaea;
+      color: #ddd;
     }
 
-    /* ---- MINIATURES ---- */
+    /* --- MINIATURES (PC) --- */
     .video-thumbs {
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       justify-content: center;
       gap: 25px;
@@ -69,109 +67,114 @@
     .video-thumb video {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
+      box-shadow: 0 0 12px rgba(0,255,255,0.2);
     }
 
     .video-thumb:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.45);
     }
 
     .video-thumb p {
       text-align: center;
-      color: #eaeaea;
-      margin-top: 6px;
+      margin-top: 5px;
+      color: #ddd;
     }
 
-    /* ---- BOUTON RETOUR EN BAS ---- */
-    .return-bottom {
-      text-align: center;
-      margin: 60px 0 20px 0;
-    }
+    /* ================================
+       📱 VERSION MOBILE
+       ================================ */
+    @media (max-width: 768px) {
 
-    .return-bottom a {
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 12px;
-      font-size: 22px;
-      font-weight: bold;
-      box-shadow: 0 0 20px cyan;
-      display: inline-block;
-      transition: 0.3s;
-    }
+      /* On cache le grand lecteur */
+      .video-main {
+        display: none !important;
+      }
 
-    .return-bottom a:hover {
-      background: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 0 30px cyan;
+      /* Les miniatures deviennent des lecteurs indépendants */
+      .video-thumbs {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        max-width: 100%;
+      }
+
+      .video-thumb {
+        width: 100%;
+      }
+
+      .video-thumb video {
+        width: 100%;
+        border-radius: 12px;
+      }
     }
 
   </style>
-
 </head>
 
-<body class="fond-videos">
+<body>
 
-  <div class="video-page-wrapper">
+<div class="video-page-wrapper">
 
-    <h1 class="video-title-main">🎥 Galerie Vidéo – Laser & Matière</h1>
+  <h1 class="video-title-main">🎥 Galerie Vidéo – Laser & Matière</h1>
 
-    <!-- VIDÉO PRINCIPALE -->
-    <section class="video-main">
-      <video id="mainPlayer" controls>
+  <!-- ======== LECTEUR PRINCIPAL (visible PC seulement) ======== -->
+  <section class="video-main">
+    <video id="mainPlayer" controls>
+      <source src="assets/video1.mp4" type="video/mp4">
+    </video>
+    <p id="mainPlayerTitle">Gravure sur bouteille</p>
+  </section>
+
+
+  <!-- ======== MINIATURES / PLAYERS MOBILES ======== -->
+  <div class="video-thumbs">
+
+    <div class="video-thumb" onclick="changeVideo('assets/video1.mp4', 'Gravure sur bouteille')">
+      <video controls playsinline preload="metadata">
         <source src="assets/video1.mp4" type="video/mp4">
       </video>
       <p>Gravure sur bouteille</p>
-    </section>
-
-    <!-- MINIATURES -->
-    <div class="video-thumbs">
-
-      <div class="video-thumb" onclick="changeVideo('assets/video1.mp4', 'Gravure sur bouteille')">
-        <video muted>
-          <source src="assets/video1.mp4" type="video/mp4">
-        </video>
-        <p>Gravure sur bouteille</p>
-      </div>
-
-      <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', Gravure sur verre')">
-        <video muted>
-          <source src="assets/video2.mp4" type="video/mp4">
-        </video>
-        <p>Gravure sur verre</p>
-      </div>
-
-      <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Gravure médaillon')">
-        <video muted>
-          <source src="assets/video3.mp4" type="video/mp4">
-        </video>
-        <p>Gravure médaillon</p>
-      </div>
-
     </div>
 
-    <!-- BOUTON RETOUR EN BAS AU MILIEU -->
-    <div class="return-bottom">
-      <a href="index.html">⟵ Retour</a>
+    <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', 'Découpe bois 40W')">
+      <video controls playsinline preload="metadata">
+        <source src="assets/video2.mp4" type="video/mp4">
+      </video>
+      <p>Découpe bois 40W</p>
+    </div>
+
+    <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Gravure métal 2W')">
+      <video controls playsinline preload="metadata">
+        <source src="assets/video3.mp4" type="video/mp4">
+      </video>
+      <p>Gravure métal 2W</p>
     </div>
 
   </div>
 
-  <!-- SCRIPT CHANGEMENT VIDÉO -->
-  <script>
-    function changeVideo(src, title) {
-      const main = document.getElementById('mainPlayer');
-      main.pause();
-      main.querySelector('source').src = src;
-      main.load();
-      main.play();
-      document.querySelector('.video-main p').textContent = title;
-    }
-  </script>
+  <!-- BOUTON RETOUR ACCUEIL -->
+  <div style="text-align:center; margin:40px 0;">
+    <a href="index.html" class="btn btn-primary">← Retour à l'accueil</a>
+  </div>
+
+</div>
+
+<script>
+/* ======== FONCTION POUR PC ======== */
+function changeVideo(src, title) {
+  if (window.innerWidth <= 768) return; // SUR MOBILE : on ne touche à rien
+
+  const player = document.getElementById('mainPlayer');
+  const titleBox = document.getElementById('mainPlayerTitle');
+
+  player.pause();
+  player.querySelector('source').src = src;
+  player.load();
+  player.play();
+
+  titleBox.textContent = title;
+}
+</script>
 
 </body>
-
 </html>
-
-
