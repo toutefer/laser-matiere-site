@@ -23,13 +23,18 @@
   
   <style>
   .bandeau-info {
-    background: #ffcc00;
-    padding: 12px 20px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.1em;
-    color: #000;
-    border-bottom: 2px solid #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #ffcc00;
+  padding: 12px 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #000;
+  border-bottom: 2px solid #000;
+  z-index: 9999; /* reste au dessus de tout */
   }
 
   .snapcode img {
