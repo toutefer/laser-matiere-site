@@ -1,58 +1,70 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCMRPQ514V"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-ZCMRPQ514V');
-  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laser & Matière — Gravure laser de précision</title>
 
   <meta name="description" content="Laser & Matière by Toutefer à La Châtaigneraie (Vendée) — Gravure laser sur bois, métal, cuir, outils, acrylique et impression 3D. Marquage, découpe et personnalisation sur mesure.">
   <meta name="keywords" content="gravure laser, laser matière, toutefer, La Châtaigneraie, Vendée, gravure sur bois, gravure sur métal, gravure sur cuir, marquage industriel, découpe laser, personnalisation, impression 3D">
   <meta name="author" content="Laser & Matière by Toutefer">
+
   <link rel="icon" href="favicon.png" type="image/png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laser &amp; Matière — Gravure laser de précision</title>
   <link rel="canonical" href="https://toutefer.github.io/laser-matiere-site/">
   <meta name="robots" content="index, follow">
+
   <link rel="stylesheet" href="assets/styles.css?v=3">
-  
+
   <style>
-  .bandeau-info {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: #ffcc00;
-  padding: 12px 20px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.1em;
-  color: #000;
-  border-bottom: 2px solid #000;
-  z-index: 9999; /* reste au dessus de tout */
-  }
 
-  .snapcode img {
-    width: 120px !important;
-    height: auto !important;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(255, 255, 0, 0.3);
-  }
-</style>
+    /* Bandeau informations — colonne gauche */
+    .bandeau-info-left {
+      position: fixed;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      background: #ffcc00;
+      padding: 20px 10px;
+      font-weight: bold;
+      font-size: 1em;
+      color: #000;
+      border-right: 2px solid #000;
+      width: 180px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      z-index: 99999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* Bandeau informations — colonne droite */
+    .bandeau-info-right {
+      position: fixed;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      background: #ffcc00;
+      padding: 20px 10px;
+      font-weight: bold;
+      font-size: 1em;
+      color: #000;
+      border-left: 2px solid #000;
+      width: 180px;
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      z-index: 99999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+  </style>
+
 </head>
-  <body>
 
-<div class="bandeau-info">
-  🚧 Le site est en cours d’amélioration. Certaines pages peuvent être incomplètes.
-</div>
+<body>
 
+  <!-- Bandeaux fixes gauche / droite -->
+  <div class="bandeau-info-left">🚧 Site en amélioration – certaines pages peuvent être incomplètes.</div>
+  <div class="bandeau-info-right">🚧 Mises à jour régulières – Merci pour votre patience !</div>
 
 
 
