@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,15 @@
 
   <style>
 
-    /* ---- Fond image pour la page vidéos ---- */
+    /* ---- FOND IMAGE ---- */
     body.fond-videos {
       background: url("assets/images/fond_video.jpg") no-repeat center center fixed;
       background-size: cover;
       color: white;
       font-family: Arial, sans-serif;
     }
-       /* ---- BOUTON RETOUR ---- */
+
+    /* ---- BOUTON RETOUR ---- */
     .back-button {
       text-align: center;
       margin-top: 20px;
@@ -38,23 +40,23 @@
       box-shadow: 0 0 25px rgba(0, 255, 255, 1);
     }
 
-    /* ---- Conteneur centré ---- */
+    /* ---- WRAPPER ---- */
     .video-page-wrapper {
       max-width: 1100px;
       margin: 0 auto;
       padding: 40px 20px;
-      backdrop-filter: blur(3px); /* léger flou pour séparer du fond */
+      backdrop-filter: blur(2px);
     }
 
-    /* ---- Titre principal ---- */
+    /* ---- TITRE ---- */
     .video-title-main {
       text-align: center;
       font-size: 2em;
       margin-bottom: 30px;
-      text-shadow: 0 0 15px rgba(0,255,255,0.8);
+      text-shadow: 0 0 15px rgba(0, 255, 255, 0.9);
     }
 
-    /* ---- Vidéo principale ---- */
+    /* ---- VIDÉO PRINCIPALE ---- */
     .video-main {
       max-width: 900px;
       margin: 0 auto;
@@ -64,15 +66,15 @@
     .video-main video {
       width: 100%;
       border-radius: 18px;
-      box-shadow: 0 0 25px rgba(0,255,255,0.3);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
     }
 
     .video-main p {
       margin-top: 10px;
-      color: #ddd;
+      color: #eaeaea;
     }
 
-    /* ---- Miniatures ---- */
+    /* ---- MINIATURES ---- */
     .video-thumbs {
       margin-top: 40px;
       display: flex;
@@ -90,93 +92,83 @@
     .video-thumb video {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,255,255,0.2);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.25);
     }
 
     .video-thumb:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(0,255,255,0.4);
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.45);
     }
 
     .video-thumb p {
       text-align: center;
-      color: #ddd;
+      color: #eaeaea;
       margin-top: 6px;
     }
 
   </style>
+
 </head>
 
 <body class="fond-videos">
 
-<div class="video-page-wrapper">
+  <!-- BOUTON RETOUR -->
+  <div class="back-button">
+    <a href="index.html">⟵ Retour</a>
+  </div>
 
-  <h1 class="video-title-main">🎥 Galerie Vidéo – Laser & Matière</h1>
+  <div class="video-page-wrapper">
 
-  <!-- ------- VIDEO PRINCIPALE ------- -->
-  <section class="video-main">
-    <video id="mainPlayer" controls>
-        <source src="assets/video1.mp4" type="video/mp4">
-    </video>
-    <p>Gravure sur bouteille</p>
-  </section>
+    <h1 class="video-title-main">🎥 Galerie Vidéo – Laser & Matière</h1>
 
-  <!-- ------- MINIATURES ------- -->
-  <div class="video-thumbs">
-
-    <div class="video-thumb" onclick="changeVideo('assets/video1.mp4', 'Gravure sur bouteille')">
-      <video muted>
+    <!-- VIDÉO PRINCIPALE -->
+    <section class="video-main">
+      <video id="mainPlayer" controls>
         <source src="assets/video1.mp4" type="video/mp4">
       </video>
       <p>Gravure sur bouteille</p>
-    </div>
+    </section>
 
-    <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', 'Découpe bois 40W')">
-      <video muted>
-        <source src="assets/video2.mp4" type="video/mp4">
-      </video>
-      <p>Graveur sur verre</p>
-    </div>
+    <!-- MINIATURES -->
+    <div class="video-thumbs">
 
-    <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Gravure métal 2W')">
-      <video muted>
-        <source src="assets/video3.mp4" type="video/mp4">
-      </video>
-      <p>Gravure médaillon</p>
-    </div>
-    
-    <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', 'Découpe bois 40W')">
-      <video muted>
-        <source src="assets/video4.mp4" type="video/mp4">
-      </video>
-      <p>Réalisations</p>
+      <div class="video-thumb" onclick="changeVideo('assets/video1.mp4', 'Gravure sur bouteille')">
+        <video muted>
+          <source src="assets/video1.mp4" type="video/mp4">
+        </video>
+        <p>Gravure sur bouteille</p>
+      </div>
+
+      <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', 'Découpe bois 40W')">
+        <video muted>
+          <source src="assets/video2.mp4" type="video/mp4">
+        </video>
+        <p>Découpe bois 40W</p>
+      </div>
+
+      <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Gravure métal 2W')">
+        <video muted>
+          <source src="assets/video3.mp4" type="video/mp4">
+        </video>
+        <p>Gravure métal 2W</p>
+      </div>
+
     </div>
 
   </div>
 
-</div>
-
-<script>
-function changeVideo(src, title) {
-    const main = document.getElementById('mainPlayer');
-    main.pause();
-    main.querySelector('source').src = src;
-    main.load();
-    main.play();
-    document.querySelector('.video-main p').textContent = title;
-}
-</script>
+  <!-- SCRIPT CHANGEMENT DE VIDÉO -->
+  <script>
+    function changeVideo(src, title) {
+      const main = document.getElementById('mainPlayer');
+      main.pause();
+      main.querySelector('source').src = src;
+      main.load();
+      main.play();
+      document.querySelector('.video-main p').textContent = title;
+    }
+  </script>
 
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
