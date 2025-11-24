@@ -3,46 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vidéos Laser & Matière</title>
-  <link rel="stylesheet" href="assets/style.css">
-</head>
+  <title>Vidéos – Laser & Matière</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* STYLE SPECIFIQUE A LA PAGE VIDEOS */
+    .video-main {
+        max-width: 850px;
+        margin: 40px auto;
+        text-align: center;
+    }
+    .video-main video {
+        width: 100%;
+        border-radius: 18px;
+        box-shadow: 0 0 25px rgba(0,255,255,0.2);
+    }
 
+    .video-thumbs {
+        margin-top: 30px;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .video-thumb {
+        width: 260px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .video-thumb video {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,255,255,0.15);
+    }
+
+    .video-thumb:hover {
+        transform: scale(1.04);
+    }
+
+    .video-title {
+        margin-top: 10px;
+        font-size: 0.9em;
+        color: #aaa;
+    }
+  </style>
+</head>
 <body>
 
-<!-- HEADER -->
-<header style="text-align:center; padding:20px;">
-  <h1 class="title-lg laser-title">🎥 Toutes les vidéos</h1>
-  <p class="muted">Retrouvez ici toutes mes démonstrations de gravure laser.</p>
-  <a href="index.html" style="color:#0ff; text-decoration:underline;">⟵ Retour à l'accueil</a>
+<header>
+  <h1 class="title-lg laser-title" style="text-align:center; margin-top:40px;">
+    🎥 Galerie Vidéo – Laser & Matière
+  </h1>
 </header>
 
-<!-- GALERIE DE VIDÉOS -->
-<section class="section" style="margin-top:40px;">
-  <div class="container" style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-
-    <div style="max-width:350px;">
-      <video controls style="width:100%; border-radius:16px; box-shadow:0 0 25px rgba(0,255,255,0.25);">
+<section class="video-main">
+    <!-- VIDEO PRINCIPALE -->
+    <video id="mainPlayer" controls>
         <source src="assets/video1.mp4" type="video/mp4">
-      </video>
-      <p style="color:#aaa; margin-top:10px;">Gravure sur bouteille</p>
-    </div>
+    </video>
+    <p class="video-title">Gravure sur bouteille</p>
 
-    <div style="max-width:350px;">
-      <video controls style="width:100%; border-radius:16px; box-shadow:0 0 25px rgba(0,255,255,0.25);">
-        <source src="assets/video2.mp4" type="video/mp4">
-      </video>
-      <p style="color:#aaa; margin-top:10px;">Seconde vidéo</p>
-    </div>
+    <!-- MINIATURES -->
+    <div class="video-thumbs">
 
-    <div style="max-width:350px;">
-      <video controls style="width:100%; border-radius:16px; box-shadow:0 0 25px rgba(0,255,255,0.25);">
-        <source src="assets/video3.mp4" type="video/mp4">
-      </video>
-      <p style="color:#aaa; margin-top:10px;">Troisième vidéo</p>
-    </div>
-
-  </div>
-</section>
-
-</body>
-</html>
+        <div class="video-thumb" onclick="changeVideo('assets/video1.mp4', 'Gravure sur bouteille')">
+            <video muted>
+                <source src="assets/video1.mp4" type="video/mp4">
+            </video>
+            <p class="vid
