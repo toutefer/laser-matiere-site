@@ -18,43 +18,35 @@
 
   <style>
 
-    /* Bandeau informations — colonne gauche */
-    .bandeau-info-left {
-      position: fixed;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      background: #ffcc00;
-      padding: 20px 10px;
-      font-weight: bold;
-      font-size: 1em;
-      color: #000;
-      border-right: 2px solid #000;
-      width: 180px;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      z-index: 99999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
+    /* Bandeau gauche */
+.bandeau-info-left {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background: #ffcc00;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  z-index: 99999;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
 
-    /* Bandeau informations — colonne droite */
-    .bandeau-info-right {
-      position: fixed;
-      top: 50%;
-      right: 0;
-      transform: translateY(-50%);
-      background: #ffcc00;
-      padding: 20px 10px;
-      font-weight: bold;
-      font-size: 1em;
-      color: #000;
-      border-left: 2px solid #000;
-      width: 180px;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      z-index: 99999;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
+/* Bandeau droit */
+.bandeau-info-right {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: #ffcc00;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  z-index: 99999;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+}
 
   </style>
 
@@ -62,9 +54,13 @@
 
 <body>
 
-  <!-- Bandeaux fixes gauche / droite -->
-  <div class="bandeau-info-left">🚧 Site en amélioration – certaines pages peuvent être incomplètes.</div>
-  <div class="bandeau-info-right">🚧 Mises à jour régulières – Merci pour votre patience !</div>
+  <div class="bandeau-info-left">
+  🚧 Site en amélioration — certaines pages peuvent être incomplètes.
+</div>
+
+<div class="bandeau-info-right">
+  🚧 Mises à jour régulières — merci pour votre patience.
+</div>
 
 
 
