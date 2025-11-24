@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCMRPQ514V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZCMRPQ514V');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toutes les vidéos – Laser & Matière by Toutefer</title>
+  <meta name="description" content="Galerie vidéo Laser & Matière : démonstrations de gravure laser sur bois, métal, PS5, outils et autres supports à La Châtaigneraie.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    .video-item video {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(0,255,255,0.25);
+    }
+    .video-item p {
+      color: #aaa;
+      margin-top: 8px;
+      text-align: center;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body class="dark-theme page-galerie">
+
+  <header class="navbar">
+    <div class="logo-area">
+      <img src="assets/images/logoLM_icon.png" alt="Logo Laser & Matière" class="logo">
+      <h1>Laser & Matière</h1>
+      <p>Gravure laser de précision</p>
+    </div>
+    <nav class="menu">
+      <a href="index.html">Accueil</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="videos.html" class="active">Vidéos</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="section">
+    <section class="container">
+      <h1 class="title-lg laser-title" style="text-align:center;">🎥 Galerie vidéo complète</h1>
+      <p class="muted" style="text-align:center;">
+        Retrouvez ici les démonstrations de gravure laser : PS5, bouteilles, outils, métal, bois…
+      </p>
+
+      <div class="video-grid">
+
+        <!-- VIDÉO 1 -->
+        <div class="video-item">
+          <video controls>
+            <source src="assets/video1.mp4" type="video/mp4">
+          </video>
+          <p>Gravure sur bouteille</p>
+        </div>
+
+        <!-- VIDÉO 2 -->
+        <div class="video-item">
+          <video controls>
+            <source src="assets/video2.mp4" type="video/mp4">
+          </video>
+          <p>Gravure PS5</p>
+        </div>
+
+        <!-- VIDÉO 3 -->
+        <div class="video-item">
+          <video controls>
+            <source src="assets/video3.mp4" type="video/mp4">
+          </video>
+          <p>Gravure sur outils</p>
+        </div>
+
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="index.html" class="btn btn-primary">← Retour à l'accueil</a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer style="text-align:center;margin-top:60px;color:#888;">
+    © 2025 Laser & Matière by Toutefer — Gravure laser de précision à La Châtaigneraie
+  </footer>
+
+</body>
+</html>
