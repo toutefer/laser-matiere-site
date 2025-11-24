@@ -45,21 +45,30 @@
 }
 
 /* ---- MOBILE ---- */
+/* ---- Animation pulse plus visible ---- */
+@keyframes pulseMobileBanner {
+  0%   { opacity: 0.35; }
+  50%  { opacity: 1; }      /* 🔥 apparaît bien */
+  100% { opacity: 0.35; }
+}
+
+/* ---- MOBILE ---- */
 @media (max-width: 768px) {
   .bandeau-info-left,
   .bandeau-info-right {
-    background: rgba(255, 204, 0, 0.35); /* jaune très transparent */
-    backdrop-filter: blur(4px);
-    font-size: 11px;
-    padding: 6px 10px;
-    max-width: 130px;
-    border-radius: 4px;
-    box-shadow: none;
-    top: 8px;              /* collés en haut mais pas sur ton menu */
-    opacity: 0.65;
-    animation: pulseMobileBanner 3s ease-in-out infinite;
+    background: rgba(255, 204, 0, 0.55); /* 🔥 plus visible */
+    backdrop-filter: blur(6px);
+    font-size: 12px;
+    padding: 7px 12px;
+    max-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.4); /* halo blanc léger */
+    top: 10px;
+    opacity: 0.8; /* base plus forte */
+    animation: pulseMobileBanner 2.2s ease-in-out infinite; /* 🔥 clignote plus */
   }
 }
+
 
   </style>
 
