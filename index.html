@@ -1,474 +1,266 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laser & Matières - Personnalisation, Gravure et Impression</title>
+    
+    <!-- Google tag (gtag.js) pour le référencement -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCMRPQ514V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZCMRPQ514V');
+    </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laser & Matière — Gravure laser de précision</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .text-gold { color: #f59e0b; }
+        .bg-gold { background-color: #f59e0b; }
+        .hover-gold:hover { background-color: #d97706; }
+        
+        .uv-glow { border: 1px solid #374151; transition: all 0.3s ease; }
+        .uv-glow:hover { border-color: #8b5cf6; box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.1); transform: translateY(-5px); }
 
-  <meta name="description" content="Laser & Matière by Toutefer à La Châtaigneraie (Vendée) — Gravure laser sur bois, métal, cuir, outils, acrylique et impression 3D. Marquage, découpe et personnalisation sur mesure.">
-  <meta name="keywords" content="gravure laser, laser matière, toutefer, La Châtaigneraie, Vendée, gravure sur bois, gravure sur métal, gravure sur cuir, marquage industriel, découpe laser, personnalisation, impression 3D">
-  <meta name="author" content="Laser & Matière by Toutefer">
+        .laser-glow { border: 1px solid #374151; transition: all 0.3s ease; }
+        .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); transform: translateY(-5px); }
 
-  <link rel="icon" href="favicon.png" type="image/png">
-  <link rel="canonical" href="https://toutefer.github.io/laser-matiere-site/">
-  <meta name="robots" content="index, follow">
+        .badge-clignotant { animation: clignotement 1.2s infinite; }
+        @keyframes clignotement { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.02); } 100% { opacity: 1; transform: scale(1); } }
+        
+        .fade-in { animation: fadeIn 1s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-  <link rel="stylesheet" href="assets/styles.css?v=3">
-
-  <style>
-
-    /* ---- Desktop : normal ---- */
-.bandeau-info-left,
-.bandeau-info-right {
-  position: fixed;
-  top: 20px;
-  padding: 10px 15px;
-  background: #ffcc00;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #000;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
-  z-index: 99999;
-  max-width: 180px;
-}
-
-.bandeau-info-left { left: 20px; }
-.bandeau-info-right { right: 20px; }
-
-/* ---- Animation de pulsation douce ---- */
-@keyframes pulseMobileBanner {
-  0%   { opacity: 0.55; }
-  50%  { opacity: 0.90; }
-  100% { opacity: 0.55; }
-}
-
-/* ---- MOBILE ---- */
-/* ---- Animation pulse avec pause 3s ---- */
-@keyframes pulseMobileBanner {
-  0%   { opacity: 0.35; }
-  20%  { opacity: 1; }      /* apparaît */
-  60%  { opacity: 1; }      /* 🔥 reste visible 2-3 sec */
-  100% { opacity: 0.35; }   /* disparaît */
-}
-
-/* ---- MOBILE ---- */
-@media (max-width: 768px) {
-  .bandeau-info-left,
-  .bandeau-info-right {
-    background: rgba(255, 204, 0, 0.55);
-    backdrop-filter: blur(6px);
-    font-size: 12px;
-    padding: 7px 12px;
-    max-width: 150px;
-    border-radius: 5px;
-    box-shadow: 0 0 12px rgba(255,255,255,0.4);
-    top: 10px;
-    opacity: 0.8;
-    animation: pulseMobileBanner 5s ease-in-out infinite; /* 🔥 reste visible + longtemps */
-  }
-}
-
-
-
-  </style>
-
+        /* Pour masquer la flèche par défaut de la FAQ */
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
-
-  <div class="bandeau-info-left">
-  🚧 Site en amélioration — certaines pages peuvent être incomplètes.
-</div>
-
-<div class="bandeau-info-right">
-  🚧 Mises à jour régulières — merci pour votre patience.
-</div>
-
-
-
-<!-- Snapcode placé en haut à gauche -->
-<header class="header">
-  <div class="container nav">
-    <a href="#top" class="brand">
-      <img src="LM_clean_xTool.svg" alt="Logo Laser & Matière" class="logo-lm">
-      <span class="laser-metal">Laser & Matière</span>
-      <span class="sub">Gravure laser de précision</span>
-    </a>
-
-    <nav class="nav-links" id="navLinks">
-  <a href="#pourquoi-graver">Pourquoi graver ?</a>
-  <a href="#realisations">Réalisations</a>
-  <a href="#tarifs">Tarifs</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact" class="btn btn-primary">07&nbsp;61&nbsp;92&nbsp;92&nbsp;46</a>
-</nav>
-
-<button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
-
-  </div>
-</header>
-
-<main id="top">
- <!-- HERO -->
-    <!-- HERO -->
-<section class="hero section">
-  <div class="container grid2">
-    <!-- Colonne de gauche -->
-<div>
-  <h1 class="title-xl laser-title">Gravure laser <span class="fade">de précision</span></h1>
-  <p class="muted">
-  Bois, métal, cuir, acrylique, outils, verre… et capots de consoles (PS5).<br>
-  <span class="plus">Et bien plus encore...</span><br>
-  <strong>Pas de peinture, pas de stickers</strong> : c’est une vraie gravure dans la matière.
-</p>
-
-  <div class="cta-row">
-    <a href="#contact" class="btn btn-primary">Demander un Devis Gratuit</a>
-    <a href="mailto:laser.matiere@gmail.com" class="btn btn-ghost">laser.matiere@gmail.com</a>
-  </div>
-
-  <p class="pill">📍 La Châtaigneraie (85) • 🕓 Réponse sous 24 h</p>
-
-  <div class="snap-inline">
-    <a href="https://www.snapchat.com/add/lasermatiere" target="_blank" rel="noopener">
-      <img src="assets/images/snapcode-lasermatiere.png" alt="Snapcode Laser & Matière">
-    </a>
-    <p class="snap-text">Snap : <span>lasermatiere</span></p>
-  </div>
-</div>
-
-<!-- Colonne de droite -->
-   <div class="mock shadow-xl">
-  <div class="mock-title">Exemples de gravures</div>
-  <div class="mock-slider">
-
-    <div class="slides">
-      <img src="assets/images/exemple1.jpg" alt="Gravure PS5" />
-      <img src="assets/images/exemple2.jpg" alt="Gravure sur toile" />
-      <img src="assets/images/exemple3.jpg" alt="Panneau d'annverssaire pour les 20ans" />
-      <img src="assets/images/exemple4.jpg" alt="Masque 3D Venom" />
-      <img src="assets/images/exemple5.jpg" alt="Gravure portrait sur bois" />
-      <img src="assets/images/exemple6.jpg" alt="Portrait sur toile" />
-   </div> <!-- ferme .slides -->
-</div> <!-- ferme .mock-slider -->
-</div> <!-- ferme .mock -->
-</div> <!-- ferme .container grid2 -->
-  
-<!-- SECTION VIDÉOS RÉCENTES -->
-<section class="section section-border" id="videos" style="margin-top:40px; text-align:center;">
-  <div class="container">
-    <h2 class="title-lg laser-title">🎥 Dernières vidéos</h2>
-    <p class="muted">Quelques-unes de nos dernières réalisations en vidéo.</p>
-
-    <div style="display:flex; justify-content:center; gap:30px; flex-wrap:wrap; margin-top:20px;">
-
-      <!-- VIDÉO 1 -->
-      <div style="max-width:350px;">
-        <video controls style="width:100%; border-radius:16px; box-shadow:0 0 25px rgba(0,255,255,0.25);">
-          <source src="assets/video1.mp4" type="video/mp4">
-        </video>
-        <p style="color:#aaa; margin-top:10px;">Gravure sur bouteille</p>
-      </div>
-
-      <!-- VIDÉO 2 -->
-      <div style="max-width:350px;">
-        <video controls style="width:100%; border-radius:16px; box-shadow:0 0 25px rgba(0,255,255,0.25);">
-          <source src="assets/video2.mp4" type="video/mp4">
-        </video>
-        <p style="color:#aaa; margin-top:10px;">Gravure sur verre</p>
-      </div>
-
-      <!-- VIDÉO 3 -->
-      <div style="max-width:350px;">
-        <video controls style="width:100%; border-radius:16px; box-shadow:0 0 25px rgba(0,255,255,0.25);">
-          <source src="assets/video3.mp4" type="video/mp4">
-        </video>
-        <p style="color:#aaa; margin-top:10px;">Gravure médaillon </p>
-      </div>
-
+    <!-- BANDEAU HAUT CLIGNOTANT : Site en construction / mise en ligne -->
+    <div class="bg-amber-500/10 border-b border-amber-500/30 text-amber-400 py-2.5 px-4 text-center text-xs md:text-sm font-semibold tracking-wide sticky top-0 z-50 backdrop-blur-md badge-clignotant">
+        <span>🚀 Site en cours de finalisation & mise en ligne progressive — Vos demandes de devis et commandes restent actives !</span>
     </div>
 
-    <!-- Bouton vers toutes les vidéos -->
-    <a href="videos.html" class="btn btn-primary" style="margin-top:30px; display:inline-block;">
-      🎬 Voir toutes les vidéos
-    </a>
-
-  </div>
-</section>
-
-
-<!-- SECTION RÉALISATIONS : placée sous le diaporama -->
-<section id="realisations" class="section section-border" style="margin-top:40px; text-align:center;">
-  <div class="container">
-    <h2 class="title-lg laser-title">RÉALISATIONS</h2>
-    <div class="laser-line" style="margin:10px auto 20px;"></div>
-    <p class="muted">Exemples de créations : PS5, bois, métal, outils gravés, etc.</p>
-
-    <div class="real-buttons" style="display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:15px;">
-      <a href="toile.html" class="real-btn">Gravure sur toile</a>
-      <a href="divers.html" class="real-btn">Gavure sur divers support</a>
-       <a href="3d.html" class="real-btn">Impression 3D</a>
-      <a href="ps5.html" class="real-btn">Capot PS5</a>
-      <a href="bois.html" class="real-btn">Travaux sur bois</a>
-      <a href="outil.html" class="real-btn">Outil gravé</a>
-      <a href="metal.html" class="real-btn">Plaque métal</a>
-      <a href="cuir.html" class="real-btn">Cuir gravé</a>
-      <a href="acrylique.html" class="real-btn">Acrylique</a>
-     <!-- Liens texte complémentaires pour le SEO -->
-<div class="realisations-links" style="text-align:center; margin-top:20px; font-size:0.95em;">
-  <a href="bois.html">Gravure sur bois</a> |
-  <a href="metal.html">Gravure sur métal</a> |
-  <a href="cuir.html">Gravure sur cuir</a> |
-  <a href="acrylique.html">Gravure sur acrylique</a> |
-  <a href="ps5.html">Gravure PS5</a> |
-  <a href="3d.html">Impression 3D</a> |
-  <a href="outil.html">Gravure sur outils</a> 
-  <a href="divers.html">Gravure sur divers support</a> 
-</div>
-
-    </div>
-  </div>
-</section>
-
-
-<section class="section section-border" id="services-pro">
-  <div class="container">
-    <div style="text-align: center;"> 
-        <h2 class="title-lg laser-title">Services Professionnels</h2>
-        <p class="muted">
-          Valorisez votre marque, protégez vos actifs et améliorez votre traçabilité.
-          <span class="plus">Gravure laser de précision pour l'industrie, l'artisanat et la PME.</span>
-        </p>
-    </div>
-    <div class="cards three">
-      <article class="card">
-        <h3 class="laser-title">🛠️ Marquage d'outils en volume</h3>
-        <p>Tarifs dégressifs pour la gravure de flottes complètes d'outils ou d'équipements. Solution anti-vol permanente, sur acier, alu ou plastique.</p>
-      </article>
-      <article class="card">
-        <h3 class="laser-title">📏 Gravure Personnalisée de Pièces</h3>
-        <p>Gravure de logos, numérotation et repères techniques directement sur les pièces que vous fournissez. Vous apportez la matière, nous fournissons la précision.</p>
-      </article>
-      <article class="card">
-        <h3 class="laser-title">⚡ Traitement express B2B</h3>
-        <p>Urgence ou planning serré ? Contactez-nous pour un devis et un planning adaptés à vos impératifs professionnels avec réponse sous 24h.</p>
-      </article>
-    </div>
-
-    <div style="text-align:center; margin-top:30px;">
-      <a href="#contact" class="btn btn-primary">Demander un tarif Pro</a>
-    </div>
-  </div>
-<!-- Tarifs dégressifs pour professionnels -->
-<section class="tarif-pro">
-  <h2>Tarifs dégressifs — Clients professionnels</h2>
-  <p>Nous proposons des remises adaptées aux volumes pour les entreprises et artisans.</p>
-
-  <div class="table-container">
-  <table class="tarif-table">
-    <thead>
-      <tr>
-        <th>Quantité</th>
-        <th>Remise</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>1 à 10 pièces</td>
-        <td>—</td>
-      </tr>
-      <tr>
-        <td>11 à 50 pièces</td>
-        <td><span class="remise">10%</span></td>
-      </tr>
-      <tr>
-        <td>51 à 100 pièces</td>
-        <td><span class="remise">15%</span></td>
-      </tr>
-      <tr>
-        <td>+ de 100 pièces</td>
-        <td><span class="remise">20%</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-</section>
-
-</section>
-
-
-<!-- Pourquoi graver ? -->
-
-  <section class="section section-border" id="pourquoi-graver" style="text-align: center;">
-  <div class="container">
-    <h2 class="title-lg laser-title">Pourquoi graver&nbsp;?</h2>
-    <p class="muted">La gravure laser n’est pas un autocollant&nbsp;: c’est un marquage permanent, net et écologique.</p>
-    <div class="cards three">
-      <article class="card">
-        <h3 class="laser-title">Métal, cuir, acrylique</h3>
-        <p>Gravure nette et permanente, résistante à la chaleur et aux frottements. Idéale pour logos, numérotation et marquages techniques.</p>
-      </article>
-      <article class="card">
-        <h3 class="laser-title">Consoles (PS5)</h3>
-        <p><strong>Pas de peinture, pas de stickers</strong> — le dessin fait partie du plastique. Ne se décolle pas, ne s’efface pas. Rendu unique, sur mesure.</p>
-      </article>
-      <article class="card">
-        <h3 class="laser-title">Bois</h3>
-        <p>Procédé naturel et <strong>écologique</strong> (sans encre ni solvant). Contraste créé par la chaleur du faisceau. Chaque pièce est unique (veines, nuances).</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-    <!-- Pourquoi graver ses outils ? -->
-   <section class="section" id="pourquoi-outils" **style="text-align: center;"** style="text-align: center;">
-      <div class="container">
-        <h2 class="title-lg laser-title">Pourquoi graver ses outils ?</h2>
-        <p class="muted">Identifier, protéger, valoriser votre matériel professionnel.</p>
-        <div class="cards four">
-          <article class="card"><h3 class="laser-title">🔒 Protection vol</h3><p>Un outil gravé est identifiable et dissuade la revente.</p></article>
-          <article class="card"><h3 class="laser-title">🧾 Traçabilité</h3><p>Logo, initiales, n° d’inventaire : gestion claire du stock.</p></article>
-          <article class="card"><h3 class="laser-title">⚙️ Durabilité</h3><p>La gravure ne s’efface pas, résiste aux produits et à l’usure.</p></article>
-          <article class="card"><h3 class="laser-title">🧰 Image pro</h3><p>Outils personnalisés = atelier organisé et crédible.</p></article>
+    <!-- En-tête / Navigation -->
+    <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-[41px] z-40">
+        <div class="text-2xl md:text-3xl font-bold text-gold tracking-wider">LASER & MATIÈRES</div>
+        <div class="hidden md:flex space-x-8 text-sm uppercase font-semibold tracking-widest">
+            <a href="#accueil" class="hover:text-gold transition duration-300">Accueil</a>
+            <a href="#expertises" class="hover:text-gold transition duration-300">Expertises</a>
+            <a href="#realisations" class="hover:text-gold transition duration-300">Réalisations</a>
+            <a href="#tarifs" class="hover:text-gold transition duration-300">Tarifs</a>
+            <a href="#faq" class="hover:text-gold transition duration-300">FAQ</a>
+            <a href="#contact" class="hover:text-gold transition duration-300">Contact</a>
         </div>
-        <p class="muted sm">💬 Gravure laser permanente : <strong>aucune peinture, aucun autocollant</strong>.</p>
-      </div>
-    </section>
+    </nav>
 
+    <!-- Section Accueil -->
+    <header id="accueil" class="relative flex flex-col items-center justify-center text-center py-32 px-4 fade-in overflow-hidden border-b border-gray-800">
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-20">
+            <source src="gemini_generated_video_e58e0afe.mp4" type="video/mp4">
+        </video>
+        
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Sublimez la matière,<br><span class="text-gold">personnalisez vos envies.</span></h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-medium drop-shadow-md">Spécialiste en personnalisation, gravure de précision, impression 3D et impression UV. De la pièce unique au projet sur-mesure, nous donnons vie à toutes vos idées avec une qualité irréprochable.</p>
+            <a href="#contact" class="bg-gold text-black font-bold py-4 px-10 rounded-full hover-gold transition duration-300 shadow-lg shadow-orange-900/20">Parlez-nous de votre projet</a>
+        </div>
+    </header>
 
-    <!-- Tarifs -->
-    <section class="section section-border" id="tarifs">
-  <div class="container">
-    <div style="text-align: center;"> 
-        <h2 class="title-lg laser-title">Tarif indicatif</h2>
-        <p class="muted">
-          Les tarifs varient selon la matière, la surface et la complexité.<br>
-          Les prix ci-dessous sont donnés à titre d'exemple sur une base de 15 x 15 cm.
-        </p>
-    </div>
-    <div class="cards four">
-      <article class="card price-card">
-        <h3>Plaque Métal Anodisé (15x15)</h3>
-        <p>Gravure de précision, marquage permanent.</p>
-        <span class="price-tag">35 €</span>
-      </article>
-      <article class="card price-card">
-        <h3>Bois / Contreplaqué (15x15)</h3>
-        <p>Gravure pour loisir, décoration ou signalétique.</p>
-        <span class="price-tag">30 €</span>
-      </article>
-      <article class="card price-card">
-        <h3>Cuir / Simili (15x15)</h3>
-        <p>Marquage de portefeuilles, étiquettes ou ceintures.</p>
-        <span class="price-tag">30 €</span>
-      </article>
-      <article class="card price-card">
-        <h3>Acrylique / Plastique (15x15)</h3>
-        <p>Plaques professionnelles, porte-clés, logos.</p>
-        <span class="price-tag">25 €</span>
-      </article>
-    </div>
+    <!-- Section Expertises -->
+    <section id="expertises" class="py-20 px-4 max-w-7xl mx-auto relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest">Nos <span class="text-gold">Savoir-Faire</span></h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative">
+                <div class="text-4xl mb-4">✂️</div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Gravure & Découpe</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">Nous donnons une nouvelle dimension à vos objets. Nous réalisons des gravures profondes et des découpes nettes pour personnaliser vos projets avec une précision absolue.</p>
+                <div class="bg-gray-900/50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-400 mb-2"><strong>Ce qu'on peut faire :</strong> Signalétique, décoration, outils, bijoux, bouteilles, objets du quotidien.</p>
+                    <p class="text-sm text-gray-400"><strong>Matières :</strong> Bois, verre, ardoise, cuir, métaux (aluminium, fer, acier, inox...).</p>
+                </div>
+            </div>
 
-    <div style="text-align:center; margin-top:30px;">
-  <a href="#contact" class="btn btn-primary btn-devis">Demander un Devis Gratuit</a>
-</div>
-</section>
+            <div class="bg-gray-900 p-8 rounded-2xl uv-glow relative overflow-hidden">
+                <div class="absolute top-0 left-0 bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-br-xl uppercase tracking-wider badge-clignotant shadow-lg shadow-purple-900/50">🔥 Nouveau !</div>
+                <div class="absolute top-0 right-0 bg-gray-800 text-gray-400 border-l border-b border-gray-700 text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">Technologie UV</div>
+                <div class="text-4xl mb-4 mt-4">🎨</div>
+                <h3 class="text-2xl font-bold mb-4 text-purple-300">Impression UV & Tenue Permanente</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">La magie de la peinture UV ! <strong>Attention, il ne s'agit ni de stickers, ni d'autocollants.</strong> C'est un marquage direct avec une véritable peinture solidifiée instantanément par la lumière UV, offrant une résistance exceptionnelle et une tenue permanente.</p>
+                <div class="bg-gray-800/50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-300 mb-2"><strong>Ce qu'on peut faire :</strong> Changer intégralement la façade d'un PC portable, personnaliser des portefeuilles, etc.</p>
+                    <p class="text-sm text-gray-300"><strong>Matières :</strong> Cuir, plastique, métal... applicable sur tout type de support !</p>
+                </div>
+            </div>
 
-    <!-- FAQ -->
-<section class="section section-border" id="faq">
-  <div class="container">
-    <div style="text-align: center;">
-        <h2 class="title-lg laser-title">FAQ</h2>
-        <p class="muted">Des réponses rapides à vos interrogations les plus fréquentes.</p>
-    </div>
-    <div class="faq">
-      <details><summary>La gravure sur outil est-elle permanente&nbsp;?</summary><p>Oui. Le laser modifie la surface&nbsp;: la gravure ne s’efface pas et résiste aux produits.</p></details>
-      <details><summary>Peut-on graver sur plastique (PS5, ABS, etc.)&nbsp;?</summary><p>Oui, avec un faisceau et des réglages adaptés pour éviter toute déformation.</p></details>
-      <details><summary>Peut-on choisir la couleur de la gravure&nbsp;?</summary><p>Non, la couleur n’est pas choisie manuellement. Selon le matériau et les réglages, le rendu peut être <strong>gris, noir ou doré</strong> (réaction thermique du plastique). Le laser n’ajoute aucune peinture.</p></details>
-      <details><summary>Combien de temps pour une commande&nbsp;?</summary><p>Réponse sous 24&nbsp;h. Réalisation sous 3 à 7 jours selon la complexité du projet.</p></details>
-      <details><summary>Et si la gravure présente un problème&nbsp;?</summary><p>✅ En cas de défaut, d’erreur ou de souci visible, nous remboursons ou refaisons la gravure après retour de l’article concerné. Chaque pièce est soigneusement vérifiée avant expédition.</p></details>
-    </div>
-  </div>
-</section>
+            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative">
+                <div class="text-4xl mb-4">🧊</div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Impression 3D & Prototypage</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">La création en volume, rapide et précise. Nous transformons vos fichiers numériques ou vos idées en objets réels avec une finition impeccable, idéal pour refaire une pièce cassée.</p>
+                <div class="bg-gray-900/50 p-4 rounded-lg">
+                    <p class="text-sm text-gray-400"><strong>Ce qu'on peut faire :</strong> Pièces de remplacement, prototypes techniques, figurines ou objets de décoration.</p>
+                </div>
+            </div>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-      <div class="container grid2">
-        <div>
-          <h2 class="title-lg laser-title">Contact &amp; Devis</h2>
-          <p class="muted">Expliquez votre projet (support, dimensions, visuel souhaité). Réponse sous 24 h.</p>
-          <p class="muted"><em>Petite structure, mais grande exigence : tout est fait maison, sans sous-traitant. Vous échangez directement avec le créateur, pas avec une plateforme anonyme.</em></p>
-          <div class="contact-grid">
-            <a class="btn btn-primary" href="tel:+33761929246">📞 07&nbsp;61&nbsp;92&nbsp;92&nbsp;46</a>
-            <a class="btn btn-ghost" href="mailto:laser.matiere@gmail.com">✉️ laser.matiere@gmail.com</a>
+            <div class="bg-gray-800/80 p-8 rounded-2xl laser-glow relative">
+                <div class="text-4xl mb-4">📱</div>
+                <h3 class="text-2xl font-bold mb-4 text-white">Coques de Téléphone</h3>
+                <p class="text-gray-300 mb-6 leading-relaxed">Rendez votre smartphone unique au monde grâce à notre technologie UV hautement résistante ! Un texte, un logo, un dessin, une photo... <strong>Mettez ce que vous voulez</strong>, nous l'appliquons avec une qualité exceptionnelle.</p>
+                <div class="bg-gray-900/80 p-4 rounded-lg border border-gray-700">
+                    <p class="text-sm text-gray-300"><strong>Ce qu'on peut faire :</strong> Personnalisation totale à votre image sur votre propre coque.</p>
+                </div>
             </div>
         </div>
-        
-          <form action="https://formspree.io/f/movpnwpo" method="POST" enctype="multipart/form-data">
-  <label for="name">Nom :</label>
-  <input type="text" id="name" name="name" required>
+    </section>
 
-  <label for="email">Email :</label>
-  <input type="email" id="email" name="email" required>
+    <!-- Section Réalisations -->
+    <section id="realisations" class="py-20 px-4 max-w-7xl mx-auto border-t border-gray-800">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white uppercase tracking-widest">Nos <span class="text-gold">Réalisations</span></h2>
+        <p class="text-center text-gray-400 mb-10">Découvrez nos créations classées par matières et technologies.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="ps5.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🎮 Capots PS5</a>
+            <a href="bois.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🪵 Bois & Photo</a>
+            <a href="metal.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">⚙️ Métal & Inox</a>
+            <a href="cuir.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🧵 Cuir</a>
+            <a href="acrylique.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">💎 Acrylique</a>
+            <a href="outil.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🧰 Outils</a>
+            <a href="3d.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🧊 Impression 3D</a>
+            <a href="videos.html" class="bg-purple-900 border border-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">🎥 Vidéos</a>
+        </div>
+    </section>
 
-  <label for="subject">Objet :</label>
-  <input type="text" id="subject" name="subject" placeholder="Ex : Gravure sur bois / logo / PS5" required>
+    <!-- Section Tarifs -->
+    <section id="tarifs" class="py-20 px-4 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest"><span class="text-gold">Tarifs</span> Indicatifs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 relative overflow-hidden hover:border-gold hover:-translate-y-2 transition transform duration-300">
+                    <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider badge-clignotant">À venir</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Personnalisation PS5</h3>
+                    <p class="text-2xl font-extrabold text-gold mb-6">Bientôt disponible</p>
+                    <ul class="text-gray-400 space-y-3 text-sm">
+                        <li>✓ Bientôt réalisable en Impression UV</li>
+                        <li>✓ Rendu couleur premium sans peinture</li>
+                        <li>✓ Ne chauffe plus et ne creuse plus le plastique</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-gold hover:-translate-y-2 transition transform duration-300">
+                    <h3 class="text-xl font-bold text-white mb-2">Bois, Outils & Bijoux</h3>
+                    <p class="text-3xl font-extrabold text-gold mb-6">Dès 25€</p>
+                    <ul class="text-gray-400 space-y-3 text-sm">
+                        <li>✓ Photo sur bois : Dès 25€</li>
+                        <li>✓ Outils (alu, fer, acier...) : Dès 30€</li>
+                        <li>✓ Bouteilles en verre et bijoux personnalisés</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-gold hover:-translate-y-2 transition transform duration-300">
+                    <h3 class="text-xl font-bold text-white mb-2">Impression UV & Autres</h3>
+                    <p class="text-3xl font-extrabold text-gold mb-6">Sur Devis</p>
+                    <ul class="text-gray-400 space-y-3 text-sm">
+                        <li>✓ Marquage couleur PC portables</li>
+                        <li>✓ Cuir, acrylique, objets du quotidien</li>
+                        <li>✓ Réponse rapide sous 24h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <label for="message">Message :</label>
-  <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet" required></textarea>
+    <!-- Section FAQ -->
+    <section id="faq" class="py-20 px-4 max-w-4xl mx-auto border-t border-gray-800">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white uppercase tracking-widest">Foire Aux <span class="text-gold">Questions</span></h2>
+        <div class="space-y-4">
+            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
+                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between"><span class="text-purple-400">[Nouveau]</span> La peinture UV, est-ce que ça dure dans le temps ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
+                <p class="text-gray-400 mt-4 leading-relaxed">Oui ! La peinture est polymérisée (durcie) instantanément par la lumière UV. Elle adhère fortement au support, offrant une excellente résistance. Sur un PC portable, une coque de téléphone ou un objet de bureau, la tenue est permanente.</p>
+            </details>
+            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
+                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between"><span class="text-purple-400">[Nouveau]</span> Est-ce que l'impression UV chauffe ou abîme le matériel (PC, téléphones) ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
+                <p class="text-gray-400 mt-4 leading-relaxed">Absolument pas. Contrairement au laser qui creuse par la chaleur, l'impression UV dépose la peinture en surface et la fige immédiatement avec de la lumière froide. Il n'y a aucun risque de surchauffe, ce qui rend le procédé 100 % sûr pour vos ordinateurs et appareils électroniques.</p>
+            </details>
+            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
+                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between">La gravure sur outil (acier, alu, fer) est-elle permanente ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
+                <p class="text-gray-400 mt-4 leading-relaxed">Oui. Le laser modifie directement la surface du métal : la gravure ne s’efface pas et résiste aux produits chimiques et à l'usure intensive du quotidien.</p>
+            </details>
+            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
+                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between">Peut-on choisir la couleur de la gravure au laser ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
+                <p class="text-gray-400 mt-4 leading-relaxed">Pour le laser classique, la couleur n’est pas choisie manuellement (le rendu est gris, noir ou doré selon la réaction thermique). Pour obtenir un marquage en couleur, nous vous orienterons vers notre technologie d'Impression UV.</p>
+            </details>
+            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
+                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between">Et si la personnalisation présente un défaut ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
+                <p class="text-gray-400 mt-4 leading-relaxed">En cas de défaut, d’erreur ou de souci visible, nous remboursons ou refaisons le travail après retour de l’article concerné. Chaque pièce est soigneusement vérifiée par nos soins avant expédition.</p>
+            </details>
+        </div>
+    </section>
 
-  <label for="file">Lien vers votre image ou plan (Google Drive, Dropbox, etc.) :</label>
-<input type="url" id="file" name="file" placeholder="https://exemple.com/votre-image" required>
+    <!-- Section Contact -->
+    <section id="contact" class="py-20 px-4 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4 text-white">Donnons vie à votre projet</h2>
+                <p class="text-gray-400 text-lg mb-6">Atelier situé à <strong class="text-gold">La Châtaigneraie, Vendée (85)</strong><br>Retrait sur place pour les locaux ou expédition dans toute la France.</p>
+                <a href="tel:+33761929246" class="block text-white hover:text-gold transition text-xl md:text-2xl font-bold mb-2">📞 07 61 92 92 46</a>
+                <a href="mailto:laser.matiere@gmail.com" class="block text-gold hover:text-white transition font-bold">✉️ laser.matiere@gmail.com</a>
+            </div>
+            
+            <!-- Formulaire de contact -->
+            <form action="https://formsubmit.co/laser.matiere@gmail.com" method="POST" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-2xl mt-10">
+                <input type="hidden" name="_subject" value="Nouveau message depuis le site internet !">
+                <input type="text" name="_honey" style="display:none">
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Votre Nom</label>
+                        <input type="text" name="Nom" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="Ex: Jean Dupont">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-2">Votre Email</label>
+                        <input type="email" name="Email" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="jean@email.com">
+                    </div>
+                </div>
+                
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Quel est votre besoin ?</label>
+                    <select name="Prestation" class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition appearance-none">
+                        <option>Choisir une prestation...</option>
+                        <option>Gravure & Découpe classique</option>
+                        <option>Impression Peinture UV Permanente</option>
+                        <option>Création de coque de téléphone</option>
+                        <option>Impression 3D</option>
+                        <option>Autre demande / Sur-mesure</option>
+                    </select>
+                </div>
+                
+                <div class="mb-8">
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Décrivez votre idée</label>
+                    <textarea name="Message" rows="5" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="Expliquez-nous votre projet en quelques mots..."></textarea>
+                </div>
+                
+                <button type="submit" class="w-full bg-gold text-black font-bold text-lg py-4 rounded-lg hover-gold transition duration-300 shadow-lg shadow-orange-900/30">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
 
-  <button type="submit">Envoyer</button>
-</form>
-      </div>
-      </section>
-
-<h2 style="margin-top:60px;text-align:center;">
-  À propos – <span>Laser & Matière</span>
-</h2>
-<p style="text-align:center;max-width:800px;margin:10px auto;color:#ccc;">
-Atelier artisanal basé à La Châtaigneraie (Vendée).  
-Chaque gravure est réalisée avec précision, sans sous-traitant,  
-sur bois, métal, cuir, acrylique ou plastique.  
-L’objectif : un rendu durable, net et unique, adapté à chaque projet.
-</p>
-
-
-<footer class="footer">
-  <div class="container foot">
-
-    <!-- Partie gauche : infos légales -->
-    <div class="foot-left">
-      <strong>Laser &amp; Matière</strong><br>
-      <span class="muted">La Châtaigneraie (Vendée) — France</span><br>
-      <small class="muted">© 2025 Laser &amp; Matière — Tous droits réservés.</small><br>
-      <strong>SIRET :</strong> 99294362790001 — Entreprise individuelle enregistrée à La Châtaigneraie (Vendée)<br>
-      📧 <a href="mailto:laser.matiere@gmail.com" class="mail-link">laser.matiere@gmail.com</a>
-    </div>
-
-    <!-- Partie droite : navigation -->
-    <div class="foot-links">
-      <a href="#pourquoi-graver">Pourquoi graver ?</a>
-      <a href="#realisations">Réalisations</a>
-      <a href="#tarifs">Tarifs</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
-
-  </div>
-</footer>
-
-</main>
-
-<a href="tel:+33761929246" class="fab-btn">
-  <span class="fab-text">DEVIS RAPIDE</span>
-  <span class="fab-num">07 61 92 92 46</span>
-</a>
+    <!-- Pied de page -->
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <p class="text-gray-500 text-sm">© 2026 Laser & Matières by Toutefer. Tous droits réservés.</p>
+                <p class="text-gray-600 text-xs mt-1">SIRET : 99294362790001</p>
+            </div>
+            <div>
+                <a href="https://www.snapchat.com/add/lasermatiere" target="_blank" class="text-gold hover:text-white font-bold text-sm transition">👻 Snapchat : lasermatiere</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
