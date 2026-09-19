@@ -28,7 +28,7 @@
         .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); transform: translateY(-5px); }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased flex flex-col min-h-screen">
 
     <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-0 z-50">
         <a href="index.html" class="text-2xl md:text-3xl font-bold text-gold tracking-wider hover:text-white transition">LASER & MATIÈRES</a>
@@ -41,51 +41,68 @@
         </div>
     </nav>
 
-    <section class="py-20 px-4 max-w-7xl mx-auto min-h-screen">
-        <div class="text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-white uppercase tracking-widest mb-4">🎥 Galerie <span class="text-gold">Vidéos</span></h1>
-            <p class="text-lg text-gray-400 max-w-2xl mx-auto">Retrouvez ici nos démonstrations de gravure laser : PS5, bouteilles, outils... Découvrez le travail de la matière en action.</p>
+    <section class="py-12 px-4 max-w-6xl mx-auto flex-grow flex flex-col items-center w-full">
+        <h1 class="text-3xl md:text-4xl font-bold text-white uppercase tracking-widest mb-10 text-center">🎥 Galerie <span class="text-gold">Vidéos</span></h1>
+        
+        <!-- Vidéo Principale -->
+        <div class="w-full bg-gray-800 p-4 rounded-2xl laser-glow shadow-xl mb-12">
+            <video id="mainPlayer" controls class="w-full h-auto rounded-lg border border-gray-700 shadow-md max-h-[60vh] bg-black">
+                <source src="video1.mp4" type="video/mp4">
+                Votre navigateur ne supporte pas la lecture de vidéos.
+            </video>
+            <p id="mainTitle" class="text-2xl font-bold text-white text-center mt-6 mb-2">Réalisation 1</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            
-            <div class="bg-gray-800 p-6 rounded-2xl laser-glow shadow-xl">
-                <video controls class="w-full h-auto rounded-lg mb-6 border border-gray-700 shadow-md">
+        <!-- Miniatures cliquables (4 vidéos) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+            <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video1.mp4', 'Réalisation 1')">
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
                     <source src="video1.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
-                <h3 class="text-xl font-bold text-white text-center">Gravure sur bouteille</h3>
-                <p class="text-gray-400 text-center text-sm mt-2">Personnalisation sur verre</p>
+                <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 1</p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-2xl laser-glow shadow-xl">
-                <video controls class="w-full h-auto rounded-lg mb-6 border border-gray-700 shadow-md">
+            <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video2.mp4', 'Réalisation 2')">
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
                     <source src="video2.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
-                <h3 class="text-xl font-bold text-white text-center">Gravure PS5</h3>
-                <p class="text-gray-400 text-center text-sm mt-2">Personnalisation de capots de console</p>
+                <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 2</p>
             </div>
 
-            <div class="bg-gray-800 p-6 rounded-2xl laser-glow shadow-xl">
-                <video controls class="w-full h-auto rounded-lg mb-6 border border-gray-700 shadow-md">
+            <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video3.mp4', 'Réalisation 3')">
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
                     <source src="video3.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>
-                <h3 class="text-xl font-bold text-white text-center">Gravure sur outils</h3>
-                <p class="text-gray-400 text-center text-sm mt-2">Traçabilité et marquage métal</p>
+                <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 3</p>
             </div>
 
+            <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video4.mp4', 'Réalisation 4')">
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
+                    <source src="video4.mp4" type="video/mp4">
+                </video>
+                <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 4</p>
+            </div>
         </div>
 
-        <div class="mt-20 text-center">
+        <div class="mt-16 text-center">
             <a href="index.html" class="inline-block bg-gray-900 border border-gray-700 hover:border-gold text-white font-bold py-4 px-10 rounded-full hover-gold transition duration-300 shadow-lg">
                 ← Retour à l'accueil
             </a>
         </div>
     </section>
 
-    <footer class="bg-black py-8 border-t border-gray-800">
+    <script>
+        function changeVideo(src, title) {
+            const main = document.getElementById('mainPlayer');
+            main.pause();
+            main.querySelector('source').src = src;
+            main.load();
+            main.play();
+            document.getElementById('mainTitle').textContent = title;
+        }
+    </script>
+
+    <footer class="bg-black py-8 border-t border-gray-800 mt-auto w-full">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-center md:text-left">
                 <p class="text-gray-500 text-sm">© 2026 Laser & Matières by Toutefer. Tous droits réservés.</p>
