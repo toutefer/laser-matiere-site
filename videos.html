@@ -1,189 +1,101 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie Vidéos – Laser & Matière</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie Vidéos - Laser & Matières</title>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCMRPQ514V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZCMRPQ514V');
+    </script>
 
-  <link rel="stylesheet" href="assets/styles.css">
-
-  <style>
-
-    /* --- FOND AVEC TON IMAGE --- */
-    body {
-      background: url("assets/images/fond_video.jpg") no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    .video-page-wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    /* --- TITRE --- */
-    .video-title-main {
-      text-align: center;
-      font-size: 2.2em;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px rgba(0,255,255,0.8);
-    }
-
-    /* --- LECTEUR PRINCIPAL (PC seulement) --- */
-    .video-main {
-      max-width: 900px;
-      margin: 0 auto 40px auto;
-      text-align: center;
-    }
-
-    .video-main video {
-      width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 0 25px rgba(0,255,255,0.3);
-    }
-
-    .video-main p {
-      margin-top: 10px;
-      color: #ddd;
-    }
-
-    /* --- MINIATURES (PC) --- */
-    .video-thumbs {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .video-thumb {
-      width: 260px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .video-thumb video {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,255,255,0.2);
-    }
-
-    .video-thumb:hover {
-      transform: scale(1.05);
-    }
-
-    .video-thumb p {
-      text-align: center;
-      margin-top: 5px;
-      color: #ddd;
-    }
-
-    /* ================================
-       📱 VERSION MOBILE
-       ================================ */
-    @media (max-width: 768px) {
-
-      /* On cache le grand lecteur */
-      .video-main {
-        display: none !important;
-      }
-
-      /* Les miniatures deviennent des lecteurs indépendants */
-      .video-thumbs {
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-        max-width: 100%;
-      }
-
-      .video-thumb {
-        width: 100%;
-      }
-
-      .video-thumb video {
-        width: 100%;
-        border-radius: 12px;
-      }
-    }
-
-  </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .text-gold { color: #f59e0b; }
+        .bg-gold { background-color: #f59e0b; }
+        .hover-gold:hover { background-color: #d97706; }
+        
+        .laser-glow { border: 1px solid #374151; transition: all 0.3s ease; }
+        .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); transform: translateY(-5px); }
+    </style>
 </head>
+<body class="antialiased">
 
-<body>
+    <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-0 z-50">
+        <a href="index.html" class="text-2xl md:text-3xl font-bold text-gold tracking-wider hover:text-white transition">LASER & MATIÈRES</a>
+        <div class="hidden md:flex space-x-6 text-sm uppercase font-semibold tracking-widest">
+            <a href="index.html#accueil" class="hover:text-gold transition duration-300">Accueil</a>
+            <a href="index.html#expertises" class="hover:text-gold transition duration-300">Expertises</a>
+            <a href="index.html#realisations" class="text-gold transition duration-300">Réalisations</a>
+            <a href="index.html#tarifs" class="hover:text-gold transition duration-300">Tarifs</a>
+            <a href="index.html#contact" class="hover:text-gold transition duration-300">Contact</a>
+        </div>
+    </nav>
 
-<div class="video-page-wrapper">
+    <section class="py-20 px-4 max-w-7xl mx-auto min-h-screen">
+        <div class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-white uppercase tracking-widest mb-4">🎥 Galerie <span class="text-gold">Vidéos</span></h1>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">Retrouvez ici nos démonstrations de gravure laser : PS5, bouteilles, outils... Découvrez le travail de la matière en action.</p>
+        </div>
 
-  <h1 class="video-title-main">🎥 Galerie Vidéo – Laser & Matière</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="bg-gray-800 p-6 rounded-2xl laser-glow shadow-xl">
+                <video controls class="w-full h-auto rounded-lg mb-6 border border-gray-700 shadow-md">
+                    <source src="video1.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+                <h3 class="text-xl font-bold text-white text-center">Gravure sur bouteille</h3>
+                <p class="text-gray-400 text-center text-sm mt-2">Personnalisation sur verre</p>
+            </div>
 
-  <!-- ======== LECTEUR PRINCIPAL (visible PC seulement) ======== -->
-  <section class="video-main">
-    <video id="mainPlayer" controls>
-      <source src="assets/video1.mp4" type="video/mp4">
-    </video>
-    <p id="mainPlayerTitle">Gravure sur bouteille</p>
-  </section>
+            <div class="bg-gray-800 p-6 rounded-2xl laser-glow shadow-xl">
+                <video controls class="w-full h-auto rounded-lg mb-6 border border-gray-700 shadow-md">
+                    <source src="video2.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+                <h3 class="text-xl font-bold text-white text-center">Gravure PS5</h3>
+                <p class="text-gray-400 text-center text-sm mt-2">Personnalisation de capots de console</p>
+            </div>
 
+            <div class="bg-gray-800 p-6 rounded-2xl laser-glow shadow-xl">
+                <video controls class="w-full h-auto rounded-lg mb-6 border border-gray-700 shadow-md">
+                    <source src="video3.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+                <h3 class="text-xl font-bold text-white text-center">Gravure sur outils</h3>
+                <p class="text-gray-400 text-center text-sm mt-2">Traçabilité et marquage métal</p>
+            </div>
 
-  <!-- ======== MINIATURES / PLAYERS MOBILES ======== -->
-  <div class="video-thumbs">
+        </div>
 
-    <div class="video-thumb" onclick="changeVideo('assets/video1.mp4', 'Gravure sur bouteille')">
-      <video controls playsinline preload="metadata">
-        <source src="assets/video1.mp4" type="video/mp4">
-      </video>
-      <p>Gravure sur bouteille</p>
-    </div>
+        <div class="mt-20 text-center">
+            <a href="index.html" class="inline-block bg-gray-900 border border-gray-700 hover:border-gold text-white font-bold py-4 px-10 rounded-full hover-gold transition duration-300 shadow-lg">
+                ← Retour à l'accueil
+            </a>
+        </div>
+    </section>
 
-    <div class="video-thumb" onclick="changeVideo('assets/video2.mp4', 'Gravure sur verre')">
-      <video controls playsinline preload="metadata">
-        <source src="assets/video2.mp4" type="video/mp4">
-      </video>
-      <p>Gravure sur verre</p>
-    </div>
-
-    <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Gravure médaillon')">
-      <video controls playsinline preload="metadata">
-        <source src="assets/video3.mp4" type="video/mp4">
-      </video>
-      <p>Gravure medaillon</p>
-    </div>
-    <div class="video-thumb" onclick="changeVideo('assets/video3.mp4', 'Réalisation')">
-      <video controls playsinline preload="metadata">
-        <source src="assets/video4.mp4" type="video/mp4">
-      </video>
-      <p>Réalisation</p>
-    </div>
-
-  </div>
-
-  <!-- BOUTON RETOUR ACCUEIL -->
-  <div style="text-align:center; margin:40px 0;">
-    <a href="index.html" class="btn btn-primary">← Retour à l'accueil</a>
-  </div>
-
-</div>
-
-<script>
-/* ======== FONCTION POUR PC ======== */
-function changeVideo(src, title) {
-  if (window.innerWidth <= 768) return; // SUR MOBILE : on ne touche à rien
-
-  const player = document.getElementById('mainPlayer');
-  const titleBox = document.getElementById('mainPlayerTitle');
-
-  player.pause();
-  player.querySelector('source').src = src;
-  player.load();
-  player.play();
-
-  titleBox.textContent = title;
-}
-</script>
+    <footer class="bg-black py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <p class="text-gray-500 text-sm">© 2026 Laser & Matières by Toutefer. Tous droits réservés.</p>
+                <p class="text-gray-600 text-xs mt-1">SIRET : 99294362790001</p>
+            </div>
+            <div>
+                <a href="https://www.snapchat.com/add/lasermatiere" target="_blank" class="text-gold hover:text-white font-bold text-sm transition">👻 Snapchat : lasermatiere</a>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
-
-
-
