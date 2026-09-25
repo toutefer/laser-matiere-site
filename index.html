@@ -26,16 +26,43 @@
         .hover-gold:hover { background-color: #d97706; }
         
         .uv-glow { border: 1px solid #374151; transition: all 0.3s ease; }
-        .uv-glow:hover { border-color: #8b5cf6; box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.1); transform: translateY(-5px); }
+        .uv-glow:hover { border-color: #8b5cf6; box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.1); }
 
         .laser-glow { border: 1px solid #374151; transition: all 0.3s ease; }
-        .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); transform: translateY(-5px); }
+        .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); }
 
         .badge-clignotant { animation: clignotement 1.2s infinite; }
         @keyframes clignotement { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.02); } 100% { opacity: 1; transform: scale(1); } }
         
         .fade-in { animation: fadeIn 1s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* NOUVEAU : Effet Laser/UV traversant sur les boutons */
+        .btn-laser-uv {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #374151;
+            transition: all 0.3s ease;
+            z-index: 1;
+        }
+        .btn-laser-uv::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 50%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.8), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.6s ease;
+            z-index: -1;
+        }
+        .btn-laser-uv:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6), inset 0 0 10px rgba(139, 92, 246, 0.3);
+            color: #ffffff;
+        }
+        .btn-laser-uv:hover::after {
+            left: 150%;
+        }
 
         /* Pour masquer la flèche par défaut de la FAQ */
         details > summary::-webkit-details-marker { display: none; }
@@ -70,7 +97,9 @@
         <div class="relative z-10">
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Sublimez la matière,<br><span class="text-gold">personnalisez vos envies.</span></h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-medium drop-shadow-md">Spécialiste en personnalisation, gravure de précision, impression 3D et impression UV. De la pièce unique au projet sur-mesure, nous donnons vie à toutes vos idées avec une qualité irréprochable.</p>
-            <a href="#contact" class="bg-gold text-black font-bold py-4 px-10 rounded-full hover-gold transition duration-300 shadow-lg shadow-orange-900/20">Parlez-nous de votre projet</a>
+            
+            <!-- NOUVEAU : Bouton avec l'effet Laser UV -->
+            <a href="#contact" class="btn-laser-uv inline-block bg-gray-900 text-white font-bold py-4 px-10 rounded-full shadow-lg">Parlez-nous de votre projet</a>
         </div>
     </header>
 
@@ -79,7 +108,8 @@
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest">Nos <span class="text-gold">Savoir-Faire</span></h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative">
+            <!-- EFFET 3D data-tilt -->
+            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
                 <div class="text-4xl mb-4">✂️</div>
                 <h3 class="text-2xl font-bold mb-4 text-white">Gravure & Découpe</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Nous donnons une nouvelle dimension à vos objets. Nous réalisons des gravures profondes et des découpes nettes pour personnaliser vos projets avec une précision absolue.</p>
@@ -89,7 +119,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-900 p-8 rounded-2xl uv-glow relative overflow-hidden">
+            <div class="bg-gray-900 p-8 rounded-2xl uv-glow relative overflow-hidden" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
                 <div class="absolute top-0 left-0 bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-br-xl uppercase tracking-wider badge-clignotant shadow-lg shadow-purple-900/50">🔥 Nouveau !</div>
                 <div class="absolute top-0 right-0 bg-gray-800 text-gray-400 border-l border-b border-gray-700 text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">Technologie UV</div>
                 <div class="text-4xl mb-4 mt-4">🎨</div>
@@ -101,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative">
+            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
                 <div class="text-4xl mb-4">🧊</div>
                 <h3 class="text-2xl font-bold mb-4 text-white">Impression 3D & Prototypage</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">La création en volume, rapide et précise. Nous transformons vos fichiers numériques ou vos idées en objets réels avec une finition impeccable, idéal pour refaire une pièce cassée.</p>
@@ -110,7 +140,7 @@
                 </div>
             </div>
 
-            <div class="bg-gray-800/80 p-8 rounded-2xl laser-glow relative">
+            <div class="bg-gray-800/80 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
                 <div class="text-4xl mb-4">📱</div>
                 <h3 class="text-2xl font-bold mb-4 text-white">Coques de Téléphone</h3>
                 <p class="text-gray-300 mb-6 leading-relaxed">Rendez votre smartphone unique au monde grâce à notre technologie UV hautement résistante ! Un texte, un logo, un dessin, une photo... <strong>Mettez ce que vous voulez</strong>, nous l'appliquons avec une qualité exceptionnelle.</p>
@@ -204,15 +234,46 @@
     <!-- Section Contact -->
     <section id="contact" class="py-20 px-4 bg-gray-900 border-t border-gray-800">
         <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold mb-4 text-white">Donnons vie à votre projet</h2>
+            
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white uppercase tracking-widest">Donnons vie à <span class="text-gold">votre projet</span></h2>
                 <p class="text-gray-400 text-lg mb-6">Atelier situé à <strong class="text-gold">La Châtaigneraie, Vendée (85)</strong><br>Retrait sur place pour les locaux ou expédition dans toute la France.</p>
                 <a href="tel:+33761929246" class="block text-white hover:text-gold transition text-xl md:text-2xl font-bold mb-2">📞 07 61 92 92 46</a>
                 <a href="mailto:laser.matiere@gmail.com" class="block text-gold hover:text-white transition font-bold">✉️ laser.matiere@gmail.com</a>
             </div>
+
+            <!-- Bloc Comment ça marche en 3 étapes -->
+            <div class="mb-20">
+                <h3 class="text-2xl font-bold text-center mb-12 text-white">Comment ça marche ?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 text-center">
+                    
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative pt-10 shadow-lg">
+                        <div class="w-12 h-12 bg-gray-900 border-2 border-gold text-gold rounded-full flex items-center justify-center text-xl font-bold absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg shadow-orange-900/40">1</div>
+                        <div class="text-4xl mb-4">💡</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Votre Idée</h4>
+                        <p class="text-gray-400 text-sm">Contactez-nous via le formulaire avec votre besoin (texte, logo, ou fichier).</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative pt-10 shadow-lg">
+                        <div class="w-12 h-12 bg-gray-900 border-2 border-gold text-gold rounded-full flex items-center justify-center text-xl font-bold absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg shadow-orange-900/40">2</div>
+                        <div class="text-4xl mb-4">⚙️</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Fabrication</h4>
+                        <p class="text-gray-400 text-sm">Après validation, nous réalisons votre projet avec précision dans l'atelier.</p>
+                    </div>
+                    
+                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative pt-10 shadow-lg">
+                        <div class="w-12 h-12 bg-gray-900 border-2 border-gold text-gold rounded-full flex items-center justify-center text-xl font-bold absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg shadow-orange-900/40">3</div>
+                        <div class="text-4xl mb-4">📦</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Retrait / Livraison</h4>
+                        <p class="text-gray-400 text-sm">Venez récupérer votre commande à La Châtaigneraie ou recevez-la chez vous.</p>
+                    </div>
+
+                </div>
+            </div>
             
             <!-- Formulaire de contact -->
-            <form action="https://formsubmit.co/laser.matiere@gmail.com" method="POST" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-2xl mt-10">
+            <form action="https://formsubmit.co/laser.matiere@gmail.com" method="POST" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-2xl">
+                <h3 class="text-2xl font-bold text-center mb-8 text-white">Envoyez-nous un message</h3>
                 <input type="hidden" name="_subject" value="Nouveau message depuis le site internet !">
                 <input type="text" name="_honey" style="display:none">
                 
@@ -244,7 +305,8 @@
                     <textarea name="Message" rows="5" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="Expliquez-nous votre projet en quelques mots..."></textarea>
                 </div>
                 
-                <button type="submit" class="w-full bg-gold text-black font-bold text-lg py-4 rounded-lg hover-gold transition duration-300 shadow-lg shadow-orange-900/30">Envoyer ma demande</button>
+                <!-- BOUTON AVEC L'EFFET LASER UV -->
+                <button type="submit" class="btn-laser-uv w-full bg-gray-900 text-white font-bold text-lg py-4 rounded-lg shadow-lg">Envoyer ma demande</button>
             </form>
         </div>
     </section>
@@ -262,5 +324,7 @@
         </div>
     </footer>
 
+    <!-- SCRIPT POUR L'EFFET CARTE 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 </body>
 </html>
