@@ -78,12 +78,13 @@
     <!-- En-tête / Navigation -->
     <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-[41px] z-40">
         <div class="text-2xl md:text-3xl font-bold text-gold tracking-wider">LASER & MATIÈRES</div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase font-semibold tracking-widest">
+        <div class="hidden md:flex space-x-6 text-sm uppercase font-semibold tracking-widest items-center">
             <a href="#accueil" class="hover:text-gold transition duration-300">Accueil</a>
             <a href="#expertises" class="hover:text-gold transition duration-300">Expertises</a>
             <a href="#realisations" class="hover:text-gold transition duration-300">Réalisations</a>
             <a href="#tarifs" class="hover:text-gold transition duration-300">Tarifs</a>
             <a href="#faq" class="hover:text-gold transition duration-300">FAQ</a>
+            <a href="devis.html" class="bg-gold text-black px-4 py-2 rounded-full hover-gold transition font-extrabold shadow-md">Devis 🚀</a>
             <a href="#contact" class="hover:text-gold transition duration-300">Contact</a>
         </div>
     </nav>
@@ -98,8 +99,10 @@
             <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Sublimez la matière,<br><span class="text-gold">personnalisez vos envies.</span></h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-medium drop-shadow-md">Spécialiste en personnalisation, gravure de précision, impression 3D et impression UV. De la pièce unique au projet sur-mesure, nous donnons vie à toutes vos idées avec une qualité irréprochable.</p>
             
-            <!-- NOUVEAU : Bouton avec l'effet Laser UV -->
-            <a href="#contact" class="btn-laser-uv inline-block bg-gray-900 text-white font-bold py-4 px-10 rounded-full shadow-lg">Parlez-nous de votre projet</a>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="devis.html" class="bg-gold text-black font-extrabold py-4 px-8 rounded-full hover-gold transition duration-300 shadow-lg uppercase tracking-wider">Demander un devis en ligne</a>
+                <a href="#contact" class="btn-laser-uv inline-block bg-gray-900 text-white font-bold py-4 px-10 rounded-full shadow-lg">Parlez-nous de votre projet</a>
+            </div>
         </div>
     </header>
 
@@ -108,7 +111,6 @@
         <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest">Nos <span class="text-gold">Savoir-Faire</span></h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- EFFET 3D data-tilt -->
             <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
                 <div class="text-4xl mb-4">✂️</div>
                 <h3 class="text-2xl font-bold mb-4 text-white">Gravure & Découpe</h3>
