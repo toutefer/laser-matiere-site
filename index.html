@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laser & Matières - Personnalisation, Gravure et Impression</title>
-    
-    <!-- Google tag (gtag.js) pour le référencement -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCMRPQ514V"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -13,7 +9,12 @@
       gtag('js', new Date());
       gtag('config', 'G-ZCMRPQ514V');
     </script>
-
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laser & Matières – Gravure Laser & Impression 3D / UV à La Châtaigneraie</title>
+    <meta name="description" content="Laser & Matières à La Châtaigneraie (Vendée) – Gravure laser de précision, impression UV Omni et impression 3D sur mesure pour particuliers et professionnels.">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -25,306 +26,97 @@
         .bg-gold { background-color: #f59e0b; }
         .hover-gold:hover { background-color: #d97706; }
         
-        .uv-glow { border: 1px solid #374151; transition: all 0.3s ease; }
-        .uv-glow:hover { border-color: #8b5cf6; box-shadow: 0 0 25px rgba(139, 92, 246, 0.4), inset 0 0 10px rgba(139, 92, 246, 0.1); }
-
         .laser-glow { border: 1px solid #374151; transition: all 0.3s ease; }
-        .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); }
-
-        .badge-clignotant { animation: clignotement 1.2s infinite; }
-        @keyframes clignotement { 0% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.02); } 100% { opacity: 1; transform: scale(1); } }
+        .laser-glow:hover { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.4), inset 0 0 10px rgba(245, 158, 11, 0.1); transform: translateY(-5px); }
         
         .fade-in { animation: fadeIn 1s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-
-        /* NOUVEAU : Effet Laser/UV traversant sur les boutons */
-        .btn-laser-uv {
-            position: relative;
-            overflow: hidden;
-            border: 1px solid #374151;
-            transition: all 0.3s ease;
-            z-index: 1;
-        }
-        .btn-laser-uv::after {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 50%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.8), transparent);
-            transform: skewX(-20deg);
-            transition: all 0.6s ease;
-            z-index: -1;
-        }
-        .btn-laser-uv:hover {
-            border-color: #8b5cf6;
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6), inset 0 0 10px rgba(139, 92, 246, 0.3);
-            color: #ffffff;
-        }
-        .btn-laser-uv:hover::after {
-            left: 150%;
-        }
-
-        /* Pour masquer la flèche par défaut de la FAQ */
-        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
-<body class="antialiased">
-
-    <!-- BANDEAU HAUT CLIGNOTANT : Site en construction / mise en ligne -->
-    <div class="bg-amber-500/10 border-b border-amber-500/30 text-amber-400 py-2.5 px-4 text-center text-xs md:text-sm font-semibold tracking-wide sticky top-0 z-50 backdrop-blur-md badge-clignotant">
-        <span>🚀 Site en cours de finalisation & mise en ligne progressive — Vos demandes de devis et commandes restent actives !</span>
-    </div>
+<body class="antialiased flex flex-col min-h-screen">
 
     <!-- En-tête / Navigation -->
-    <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-[41px] z-40">
-        <div class="text-2xl md:text-3xl font-bold text-gold tracking-wider">LASER & MATIÈRES</div>
-        <div class="hidden md:flex space-x-8 text-sm uppercase font-semibold tracking-widest">
-            <a href="#accueil" class="hover:text-gold transition duration-300">Accueil</a>
+    <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-0 z-50">
+        <div class="flex items-center space-x-3">
+            <img src="assets/images/logoLM_icon.png" alt="Logo Laser & Matières" class="w-10 h-10 object-contain">
+            <span class="text-2xl md:text-3xl font-bold text-gold tracking-wider">LASER & MATIÈRES</span>
+        </div>
+        <div class="hidden md:flex space-x-6 text-sm uppercase font-semibold tracking-widest items-center">
+            <a href="index.html" class="text-gold transition duration-300">Accueil</a>
             <a href="#expertises" class="hover:text-gold transition duration-300">Expertises</a>
             <a href="#realisations" class="hover:text-gold transition duration-300">Réalisations</a>
-            <a href="#tarifs" class="hover:text-gold transition duration-300">Tarifs</a>
-            <a href="#faq" class="hover:text-gold transition duration-300">FAQ</a>
-            <a href="#contact" class="hover:text-gold transition duration-300">Contact</a>
+            <a href="tarifs.html" class="hover:text-gold transition duration-300">Tarifs</a>
+            <a href="videos.html" class="hover:text-gold transition duration-300">Vidéos</a>
+            <a href="devis.html" class="bg-gold text-black px-4 py-2 rounded-full hover-gold transition font-bold">Devis 🚀</a>
+            <a href="contact.html" class="hover:text-gold transition duration-300">Contact</a>
         </div>
     </nav>
 
-    <!-- Section Accueil -->
-    <header id="accueil" class="relative flex flex-col items-center justify-center text-center py-32 px-4 fade-in overflow-hidden border-b border-gray-800">
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover opacity-20">
-            <source src="gemini_generated_video_e58e0afe.mp4" type="video/mp4">
-        </video>
-        
-        <div class="relative z-10">
-            <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Sublimez la matière,<br><span class="text-gold">personnalisez vos envies.</span></h1>
-            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10 font-medium drop-shadow-md">Spécialiste en personnalisation, gravure de précision, impression 3D et impression UV. De la pièce unique au projet sur-mesure, nous donnons vie à toutes vos idées avec une qualité irréprochable.</p>
-            
-            <!-- NOUVEAU : Bouton avec l'effet Laser UV -->
-            <a href="#contact" class="btn-laser-uv inline-block bg-gray-900 text-white font-bold py-4 px-10 rounded-full shadow-lg">Parlez-nous de votre projet</a>
+    <!-- Section Héro -->
+    <header class="py-20 px-4 text-center max-w-4xl mx-auto fade-in">
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-white uppercase tracking-wider">
+            Gravure Laser, Impression <span class="text-gold">UV & 3D</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl mb-10">
+            Atelier de précision basé à <strong>La Châtaigneraie (Vendée 85)</strong>. Créations sur mesure pour particuliers, artisans et entreprises.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="devis.html" class="bg-gold text-black font-extrabold py-4 px-8 rounded-full hover-gold transition duration-300 shadow-lg uppercase tracking-wider">Demander un devis en ligne</a>
+            <a href="#realisations" class="bg-gray-800 border border-gray-700 text-white font-bold py-4 px-8 rounded-full hover:border-gold transition duration-300 shadow-lg uppercase tracking-wider">Voir nos réalisations</a>
         </div>
     </header>
 
-    <!-- Section Expertises -->
-    <section id="expertises" class="py-20 px-4 max-w-7xl mx-auto relative z-10">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest">Nos <span class="text-gold">Savoir-Faire</span></h2>
+    <!-- Section Expertises / Domaines -->
+    <section id="expertises" class="py-16 px-4 max-w-6xl mx-auto w-full">
+        <h2 class="text-3xl font-bold text-center mb-12 uppercase tracking-widest text-white">Nos Domaines d'<span class="text-gold">Expertise</span></h2>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <!-- EFFET 3D data-tilt -->
-            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
-                <div class="text-4xl mb-4">✂️</div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Gravure & Découpe</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Nous donnons une nouvelle dimension à vos objets. Nous réalisons des gravures profondes et des découpes nettes pour personnaliser vos projets avec une précision absolue.</p>
-                <div class="bg-gray-900/50 p-4 rounded-lg">
-                    <p class="text-sm text-gray-400 mb-2"><strong>Ce qu'on peut faire :</strong> Signalétique, décoration, outils, bijoux, bouteilles, objets du quotidien.</p>
-                    <p class="text-sm text-gray-400"><strong>Matières :</strong> Bois, verre, ardoise, cuir, métaux (aluminium, fer, acier, inox...).</p>
-                </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-gray-800 p-6 rounded-2xl laser-glow">
+                <h3 class="text-xl font-bold text-gold mb-3">Gravure & Découpe Laser</h3>
+                <p class="text-gray-300 text-sm">Bois, métal, cuir, acrylique, ardoise... Marquage haute précision avec notre xTool S1 (diode & infrarouge).</p>
             </div>
-
-            <div class="bg-gray-900 p-8 rounded-2xl uv-glow relative overflow-hidden" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
-                <div class="absolute top-0 left-0 bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-br-xl uppercase tracking-wider badge-clignotant shadow-lg shadow-purple-900/50">🔥 Nouveau !</div>
-                <div class="absolute top-0 right-0 bg-gray-800 text-gray-400 border-l border-b border-gray-700 text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider">Technologie UV</div>
-                <div class="text-4xl mb-4 mt-4">🎨</div>
-                <h3 class="text-2xl font-bold mb-4 text-purple-300">Impression UV & Tenue Permanente</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">La magie de la peinture UV ! <strong>Attention, il ne s'agit ni de stickers, ni d'autocollants.</strong> C'est un marquage direct avec une véritable peinture solidifiée instantanément par la lumière UV, offrant une résistance exceptionnelle et une tenue permanente.</p>
-                <div class="bg-gray-800/50 p-4 rounded-lg">
-                    <p class="text-sm text-gray-300 mb-2"><strong>Ce qu'on peut faire :</strong> Changer intégralement la façade d'un PC portable, personnaliser des portefeuilles, etc.</p>
-                    <p class="text-sm text-gray-300"><strong>Matières :</strong> Cuir, plastique, métal... applicable sur tout type de support !</p>
-                </div>
+            <div class="bg-gray-800 p-6 rounded-2xl laser-glow">
+                <h3 class="text-xl font-bold text-gold mb-3">Impression & Marquage UV</h3>
+                <p class="text-gray-300 text-sm">Impression couleur de haute précision sur objets, coques, bouteilles et supports divers (machine Omni).</p>
             </div>
-
-            <div class="bg-gray-800/50 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
-                <div class="text-4xl mb-4">🧊</div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Impression 3D & Prototypage</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">La création en volume, rapide et précise. Nous transformons vos fichiers numériques ou vos idées en objets réels avec une finition impeccable, idéal pour refaire une pièce cassée.</p>
-                <div class="bg-gray-900/50 p-4 rounded-lg">
-                    <p class="text-sm text-gray-400"><strong>Ce qu'on peut faire :</strong> Pièces de remplacement, prototypes techniques, figurines ou objets de décoration.</p>
-                </div>
-            </div>
-
-            <div class="bg-gray-800/80 p-8 rounded-2xl laser-glow relative" data-tilt data-tilt-max="5" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.15">
-                <div class="text-4xl mb-4">📱</div>
-                <h3 class="text-2xl font-bold mb-4 text-white">Coques de Téléphone</h3>
-                <p class="text-gray-300 mb-6 leading-relaxed">Rendez votre smartphone unique au monde grâce à notre technologie UV hautement résistante ! Un texte, un logo, un dessin, une photo... <strong>Mettez ce que vous voulez</strong>, nous l'appliquons avec une qualité exceptionnelle.</p>
-                <div class="bg-gray-900/80 p-4 rounded-lg border border-gray-700">
-                    <p class="text-sm text-gray-300"><strong>Ce qu'on peut faire :</strong> Personnalisation totale à votre image sur votre propre coque.</p>
-                </div>
+            <div class="bg-gray-800 p-6 rounded-2xl laser-glow">
+                <h3 class="text-xl font-bold text-gold mb-3">Impression 3D sur Mesure</h3>
+                <p class="text-gray-300 text-sm">Prototypes, pièces techniques, masques et objets en PLA, ABS, TPU et PETG.</p>
             </div>
         </div>
     </section>
 
-    <!-- Section Réalisations -->
-    <section id="realisations" class="py-20 px-4 max-w-7xl mx-auto border-t border-gray-800">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white uppercase tracking-widest">Nos <span class="text-gold">Réalisations</span></h2>
-        <p class="text-center text-gray-400 mb-10">Découvrez nos créations classées par matières et technologies.</p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="ps5.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🎮 Capots PS5</a>
-            <a href="bois.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🪵 Bois & Photo</a>
-            <a href="metal.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">⚙️ Métal & Inox</a>
-            <a href="cuir.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🧵 Cuir</a>
-            <a href="acrylique.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">💎 Acrylique</a>
-            <a href="outil.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🧰 Outils</a>
-            <a href="3d.html" class="bg-gray-800 border border-gray-700 hover:border-gold text-white font-bold py-3 px-6 rounded-lg hover-gold transition duration-300 shadow-lg">🧊 Impression 3D</a>
-            <a href="videos.html" class="bg-purple-900 border border-purple-500 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-lg">🎥 Vidéos</a>
-        </div>
-    </section>
-
-    <!-- Section Tarifs -->
-    <section id="tarifs" class="py-20 px-4 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-white uppercase tracking-widest"><span class="text-gold">Tarifs</span> Indicatifs</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 relative overflow-hidden hover:border-gold hover:-translate-y-2 transition transform duration-300">
-                    <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-bl-xl uppercase tracking-wider badge-clignotant">À venir</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Personnalisation PS5</h3>
-                    <p class="text-2xl font-extrabold text-gold mb-6">Bientôt disponible</p>
-                    <ul class="text-gray-400 space-y-3 text-sm">
-                        <li>✓ Bientôt réalisable en Impression UV</li>
-                        <li>✓ Rendu couleur premium sans peinture</li>
-                        <li>✓ Ne chauffe plus et ne creuse plus le plastique</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-gold hover:-translate-y-2 transition transform duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Bois, Outils & Bijoux</h3>
-                    <p class="text-3xl font-extrabold text-gold mb-6">Dès 25€</p>
-                    <ul class="text-gray-400 space-y-3 text-sm">
-                        <li>✓ Photo sur bois : Dès 25€</li>
-                        <li>✓ Outils (alu, fer, acier...) : Dès 30€</li>
-                        <li>✓ Bouteilles en verre et bijoux personnalisés</li>
-                    </ul>
-                </div>
-                <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700 hover:border-gold hover:-translate-y-2 transition transform duration-300">
-                    <h3 class="text-xl font-bold text-white mb-2">Impression UV & Autres</h3>
-                    <p class="text-3xl font-extrabold text-gold mb-6">Sur Devis</p>
-                    <ul class="text-gray-400 space-y-3 text-sm">
-                        <li>✓ Marquage couleur PC portables</li>
-                        <li>✓ Cuir, acrylique, objets du quotidien</li>
-                        <li>✓ Réponse rapide sous 24h</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section FAQ -->
-    <section id="faq" class="py-20 px-4 max-w-4xl mx-auto border-t border-gray-800">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-white uppercase tracking-widest">Foire Aux <span class="text-gold">Questions</span></h2>
-        <div class="space-y-4">
-            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
-                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between"><span class="text-purple-400">[Nouveau]</span> La peinture UV, est-ce que ça dure dans le temps ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
-                <p class="text-gray-400 mt-4 leading-relaxed">Oui ! La peinture est polymérisée (durcie) instantanément par la lumière UV. Elle adhère fortement au support, offrant une excellente résistance. Sur un PC portable, une coque de téléphone ou un objet de bureau, la tenue est permanente.</p>
-            </details>
-            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
-                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between"><span class="text-purple-400">[Nouveau]</span> Est-ce que l'impression UV chauffe ou abîme le matériel (PC, téléphones) ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
-                <p class="text-gray-400 mt-4 leading-relaxed">Absolument pas. Contrairement au laser qui creuse par la chaleur, l'impression UV dépose la peinture en surface et la fige immédiatement avec de la lumière froide. Il n'y a aucun risque de surchauffe, ce qui rend le procédé 100 % sûr pour vos ordinateurs et appareils électroniques.</p>
-            </details>
-            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
-                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between">La gravure sur outil (acier, alu, fer) est-elle permanente ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
-                <p class="text-gray-400 mt-4 leading-relaxed">Oui. Le laser modifie directement la surface du métal : la gravure ne s’efface pas et résiste aux produits chimiques et à l'usure intensive du quotidien.</p>
-            </details>
-            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
-                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between">Peut-on choisir la couleur de la gravure au laser ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
-                <p class="text-gray-400 mt-4 leading-relaxed">Pour le laser classique, la couleur n’est pas choisie manuellement (le rendu est gris, noir ou doré selon la réaction thermique). Pour obtenir un marquage en couleur, nous vous orienterons vers notre technologie d'Impression UV.</p>
-            </details>
-            <details class="bg-gray-800 rounded-lg p-6 border border-gray-700 cursor-pointer group">
-                <summary class="font-bold text-lg text-white list-none outline-none flex justify-between">Et si la personnalisation présente un défaut ? <span class="text-gold group-open:rotate-180 transition-transform">▼</span></summary>
-                <p class="text-gray-400 mt-4 leading-relaxed">En cas de défaut, d’erreur ou de souci visible, nous remboursons ou refaisons le travail après retour de l’article concerné. Chaque pièce est soigneusement vérifiée par nos soins avant expédition.</p>
-            </details>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section id="contact" class="py-20 px-4 bg-gray-900 border-t border-gray-800">
-        <div class="max-w-4xl mx-auto">
-            
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white uppercase tracking-widest">Donnons vie à <span class="text-gold">votre projet</span></h2>
-                <p class="text-gray-400 text-lg mb-6">Atelier situé à <strong class="text-gold">La Châtaigneraie, Vendée (85)</strong><br>Retrait sur place pour les locaux ou expédition dans toute la France.</p>
-                <a href="tel:+33761929246" class="block text-white hover:text-gold transition text-xl md:text-2xl font-bold mb-2">📞 07 61 92 92 46</a>
-                <a href="mailto:laser.matiere@gmail.com" class="block text-gold hover:text-white transition font-bold">✉️ laser.matiere@gmail.com</a>
-            </div>
-
-            <!-- Bloc Comment ça marche en 3 étapes -->
-            <div class="mb-20">
-                <h3 class="text-2xl font-bold text-center mb-12 text-white">Comment ça marche ?</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 text-center">
-                    
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative pt-10 shadow-lg">
-                        <div class="w-12 h-12 bg-gray-900 border-2 border-gold text-gold rounded-full flex items-center justify-center text-xl font-bold absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg shadow-orange-900/40">1</div>
-                        <div class="text-4xl mb-4">💡</div>
-                        <h4 class="text-lg font-bold text-white mb-2">Votre Idée</h4>
-                        <p class="text-gray-400 text-sm">Contactez-nous via le formulaire avec votre besoin (texte, logo, ou fichier).</p>
-                    </div>
-                    
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative pt-10 shadow-lg">
-                        <div class="w-12 h-12 bg-gray-900 border-2 border-gold text-gold rounded-full flex items-center justify-center text-xl font-bold absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg shadow-orange-900/40">2</div>
-                        <div class="text-4xl mb-4">⚙️</div>
-                        <h4 class="text-lg font-bold text-white mb-2">Fabrication</h4>
-                        <p class="text-gray-400 text-sm">Après validation, nous réalisons votre projet avec précision dans l'atelier.</p>
-                    </div>
-                    
-                    <div class="bg-gray-800 p-6 rounded-xl border border-gray-700 relative pt-10 shadow-lg">
-                        <div class="w-12 h-12 bg-gray-900 border-2 border-gold text-gold rounded-full flex items-center justify-center text-xl font-bold absolute -top-6 left-1/2 transform -translate-x-1/2 shadow-lg shadow-orange-900/40">3</div>
-                        <div class="text-4xl mb-4">📦</div>
-                        <h4 class="text-lg font-bold text-white mb-2">Retrait / Livraison</h4>
-                        <p class="text-gray-400 text-sm">Venez récupérer votre commande à La Châtaigneraie ou recevez-la chez vous.</p>
-                    </div>
-
-                </div>
-            </div>
-            
-            <!-- Formulaire de contact -->
-            <form action="https://formsubmit.co/laser.matiere@gmail.com" method="POST" class="bg-gray-800 p-8 rounded-2xl border border-gray-700 shadow-2xl">
-                <h3 class="text-2xl font-bold text-center mb-8 text-white">Envoyez-nous un message</h3>
-                <input type="hidden" name="_subject" value="Nouveau message depuis le site internet !">
-                <input type="text" name="_honey" style="display:none">
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Votre Nom</label>
-                        <input type="text" name="Nom" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="Ex: Jean Dupont">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-400 mb-2">Votre Email</label>
-                        <input type="email" name="Email" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="jean@email.com">
-                    </div>
-                </div>
-                
-                <div class="mb-6">
-                    <label class="block text-sm font-medium text-gray-400 mb-2">Quel est votre besoin ?</label>
-                    <select name="Prestation" class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition appearance-none">
-                        <option>Choisir une prestation...</option>
-                        <option>Gravure & Découpe classique</option>
-                        <option>Impression Peinture UV Permanente</option>
-                        <option>Création de coque de téléphone</option>
-                        <option>Impression 3D</option>
-                        <option>Autre demande / Sur-mesure</option>
-                    </select>
-                </div>
-                
-                <div class="mb-8">
-                    <label class="block text-sm font-medium text-gray-400 mb-2">Décrivez votre idée</label>
-                    <textarea name="Message" rows="5" required class="w-full p-4 bg-gray-900 text-white rounded-lg border border-gray-700 focus:border-gold outline-none transition" placeholder="Expliquez-nous votre projet en quelques mots..."></textarea>
-                </div>
-                
-                <!-- BOUTON AVEC L'EFFET LASER UV -->
-                <button type="submit" class="btn-laser-uv w-full bg-gray-900 text-white font-bold text-lg py-4 rounded-lg shadow-lg">Envoyer ma demande</button>
-            </form>
+    <!-- Section Réalisations (Liens vers les sous-pages) -->
+    <section id="realisations" class="py-16 px-4 max-w-6xl mx-auto w-full">
+        <h2 class="text-3xl font-bold text-center mb-12 uppercase tracking-widest text-white">Nos <span class="text-gold">Réalisations</span></h2>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
+            <a href="bois.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Bois</a>
+            <a href="metal.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Métal</a>
+            <a href="cuir.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Cuir</a>
+            <a href="acrylique.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Acrylique</a>
+            <a href="ps5.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Capots PS5</a>
+            <a href="3d.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Impression 3D</a>
+            <a href="outil.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Outils</a>
+            <a href="toile.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white">Toile</a>
+            <a href="divers.html" class="bg-gray-800 p-6 rounded-xl border border-gray-700 laser-glow font-semibold text-white col-span-2 sm:col-span-3 lg:col-span-4">Divers & Supports Variés (Bouteilles, Casques...)</a>
         </div>
     </section>
 
     <!-- Pied de page -->
-    <footer class="bg-black py-8 border-t border-gray-800">
+    <footer class="bg-black py-8 border-t border-gray-800 mt-auto w-full">
         <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="text-center md:text-left">
                 <p class="text-gray-500 text-sm">© 2026 Laser & Matières by Toutefer. Tous droits réservés.</p>
-                <p class="text-gray-600 text-xs mt-1">SIRET : 99294362790001</p>
+                <p class="text-gray-600 text-xs mt-1">Atelier basé à La Châtaigneraie (Vendée) – SIRET : 99294362790001</p>
             </div>
-            <div>
-                <a href="https://www.snapchat.com/add/lasermatiere" target="_blank" class="text-gold hover:text-white font-bold text-sm transition">👻 Snapchat : lasermatiere</a>
+            <div class="flex space-x-6">
+                <a href="videos.html" class="text-gold hover:text-white font-bold text-sm transition">🎥 Vidéos</a>
+                <a href="devis.html" class="text-gold hover:text-white font-bold text-sm transition">📋 Devis</a>
+                <a href="contact.html" class="text-gold hover:text-white font-bold text-sm transition">✉️ Contact</a>
             </div>
         </div>
     </footer>
 
-    <!-- SCRIPT POUR L'EFFET CARTE 3D -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
 </body>
 </html>
