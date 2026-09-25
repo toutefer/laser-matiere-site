@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZCMRPQ514V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZCMRPQ514V');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de Devis – Laser & Matières à La Châtaigneraie</title>
+    <meta name="description" content="Estimez votre projet de gravure laser, impression UV ou impression 3D sur mesure avec Laser & Matières en Vendée (85).">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f3f4f6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .text-gold { color: #f59e0b; }
+        .bg-gold { background-color: #f59e0b; }
+        .hover-gold:hover { background-color: #d97706; }
+        
+        .laser-glow { border: 1px solid #374151; transition: all 0.3s ease; }
+        .laser-glow:focus-within { border-color: #f59e0b; box-shadow: 0 0 25px rgba(245, 158, 11, 0.3); }
+        
+        .fade-in { animation: fadeIn 1s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- En-tête / Navigation -->
+    <nav class="p-6 flex justify-between items-center border-b border-gray-800 bg-[#121212] sticky top-0 z-50">
+        <a href="index.html" class="text-2xl md:text-3xl font-bold text-gold tracking-wider hover:text-white transition">LASER & MATIÈRES</a>
+        <div class="hidden md:flex space-x-8 text-sm uppercase font-semibold tracking-widest">
+            <a href="index.html" class="hover:text-gold transition duration-300">Accueil</a>
+            <a href="index.html#expertises" class="hover:text-gold transition duration-300">Expertises</a>
+            <a href="index.html#realisations" class="text-gold transition duration-300">Réalisations</a>
+            <a href="tarifs.html" class="hover:text-gold transition duration-300">Tarifs</a>
+            <a href="contact.html" class="hover:text-gold transition duration-300">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Contenu Principal -->
+    <main class="py-16 px-4 max-w-3xl mx-auto flex-grow fade-in w-full">
+        
+        <div class="text-center mb-10">
+            <h1 class="text-3xl md:text-4xl font-extrabold mb-3 text-white uppercase tracking-wider">Simulateur de <span class="text-gold">Devis</span></h1>
+            <p class="text-gray-400">Gravure, marquage, impression UV ou 3D : décrivez-nous votre projet, nous vous répondrons rapidement depuis La Châtaigneraie (85).</p>
+        </div>
+
+        <!-- Formulaire de Devis connecté à FormSubmit -->
+        <form action="https://formsubmit.co/laser.matiere@gmail.com" method="POST" enctype="multipart/form-data" class="bg-gray-800/60 p-8 rounded-2xl border border-gray-700 shadow-xl space-y-6">
+            
+            <!-- Anti-spam honeypot -->
+            <input type="text" name="_honey" style="display:none">
+            <!-- Désactiver le captcha FormSubmit pour plus de fluidité -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nouvelle demande de devis / projet depuis le site !">
+
+            <!-- Étape 1 : Type de prestation & Technique -->
+            <div>
+                <label class="block text-sm font-semibold uppercase tracking-wider text-gold mb-2">1. Type de prestation ou technologie souhaitée *</label>
+                <select name="prestation" required class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-white focus:outline-none focus:border-gold transition">
+                    <option value="" disabled selected>-- Choisissez une option --</option>
+                    <option value="Impression / Marquage UV (Omni)">Impression / Marquage UV (Objets, couleurs, vernis...)</option>
+                    <option value="Bois (Gravure / Découpe laser)">Bois (Gravure / Découpe laser)</option>
+                    <option value="Métal / Outillage (Marquage)">Métal / Outillage (Marquage industriel ou personnel)</option>
+                    <option value="Cuir (Personnalisation)">Cuir (Portefeuilles, patchs, accessoires...)</option>
+                    <option value="Acrylique / Plexiglas">Acrylique / Plexiglas (Enseignes, veilleuses, plaques)</option>
+                    <option value="Coque / Téléphone / Accessoire tech">Coque de téléphone / Accessoire tech</option>
+                    <option value="Capot PS5">Customisation Capot PS5</option>
+                    <option value="Impression 3D (PLA, ABS, TPU...)">Impression 3D sur mesure (Prototypes, pièces, masques...)</option>
+                    <option value="Toile / Textile">Toile / Textile (Tableaux, t-shirts, sacs...)</option>
+                    <option value="Verre / Bouteille / Ardoise">Verre / Bouteille / Ardoise / Divers</option>
+                    <option value="Autre projet sur-mesure">Autre projet spécifique</option>
+                </select>
+            </div>
+
+            <!-- Étape 2 : Quantité -->
+            <div>
+                <label class="block text-sm font-semibold uppercase tracking-wider text-gold mb-2">2. Quantité estimée *</label>
+                <select name="quantite" required class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-white focus:outline-none focus:border-gold transition">
+                    <option value="1 pièce (Unique / Prototype / Cadeau)">1 pièce (Unique / Prototype / Cadeau)</option>
+                    <option value="Petite série (2 à 10 pièces)">Petite série (2 à 10 pièces)</option>
+                    <option value="Moyenne série (10 à 50 pièces)">Moyenne série (10 à 50 pièces)</option>
+                    <option value="Grande série / Pro (> 50 pièces)">Grande série / Pro (&gt; 50 pièces)</option>
+                </select>
+            </div>
+
+            <!-- Étape 3 : Description du projet -->
+            <div>
+                <label class="block text-sm font-semibold uppercase tracking-wider text-gold mb-2">3. Décrivez votre projet (dimensions, texte, logo, effet souhaité...) *</label>
+                <textarea name="description" rows="5" required placeholder="Ex: Je souhaite une impression UV en couleur sur coque, ou une gravure laser sur bois..." class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-white focus:outline-none focus:border-gold transition"></textarea>
+            </div>
+
+            <!-- Étape 4 : Coordonnées -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label class="block text-sm font-semibold uppercase tracking-wider text-gold mb-2">Votre Nom / Société *</label>
+                    <input type="text" name="nom" required placeholder="Jean Dupont" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-white focus:outline-none focus:border-gold transition">
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold uppercase tracking-wider text-gold mb-2">Votre E-mail *</label>
+                    <input type="email" name="email" required placeholder="jean@exemple.fr" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-white focus:outline-none focus:border-gold transition">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-semibold uppercase tracking-wider text-gold mb-2">Votre Téléphone (optionnel)</label>
+                <input type="tel" name="telephone" placeholder="06 XX XX XX XX" class="w-full bg-gray-900 border border-gray-700 rounded-xl p-4 text-white focus:outline-none focus:border-gold transition">
+            </div>
+
+            <!-- Bouton d'envoi -->
+            <div class="text-center pt-4">
+                <button type="submit" class="w-full bg-gold text-black font-extrabold py-4 px-8 rounded-xl hover-gold transition duration-300 shadow-lg uppercase tracking-wider cursor-pointer">
+                    Envoyer ma demande de devis 🚀
+                </button>
+            </div>
+
+        </form>
+
+        <div class="text-center mt-10">
+            <a href="index.html" class="text-gray-400 hover:text-gold transition text-sm">← Retour à l'accueil</a>
+        </div>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="bg-black py-8 border-t border-gray-800 text-center mt-20">
+        <p class="text-gray-500 text-sm">© 2026 Laser & Matières by Toutefer. Tous droits réservés.</p>
+        <p class="text-gray-600 text-xs mt-1">Atelier basé à La Châtaigneraie (Vendée)</p>
+    </footer>
+
+</body>
+</html>
