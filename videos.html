@@ -46,8 +46,7 @@
         
         <!-- Vidéo Principale -->
         <div class="w-full bg-gray-800 p-4 rounded-2xl laser-glow shadow-xl mb-12">
-            <video id="mainPlayer" controls class="w-full h-auto rounded-lg border border-gray-700 shadow-md max-h-[60vh] bg-black">
-                <source src="video1.mp4" type="video/mp4">
+            <video id="mainPlayer" controls class="w-full h-auto rounded-lg border border-gray-700 shadow-md max-h-[60vh] bg-black" src="video1.mp4">
                 Votre navigateur ne supporte pas la lecture de vidéos.
             </video>
             <p id="mainTitle" class="text-2xl font-bold text-white text-center mt-6 mb-2">Réalisation 1</p>
@@ -56,30 +55,22 @@
         <!-- Miniatures cliquables (4 vidéos) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
             <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video1.mp4', 'Réalisation 1')">
-                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
-                    <source src="video1.mp4" type="video/mp4">
-                </video>
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none" src="video1.mp4"></video>
                 <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 1</p>
             </div>
 
             <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video2.mp4', 'Réalisation 2')">
-                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
-                    <source src="video2.mp4" type="video/mp4">
-                </video>
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none" src="video2.mp4"></video>
                 <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 2</p>
             </div>
 
             <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video3.mp4', 'Réalisation 3')">
-                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
-                    <source src="video3.mp4" type="video/mp4">
-                </video>
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none" src="video3.mp4"></video>
                 <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 3</p>
             </div>
 
             <div class="bg-gray-900 p-3 rounded-xl border border-gray-700 hover:border-gold transition duration-300 cursor-pointer shadow-lg hover:-translate-y-2" onclick="changeVideo('video4.mp4', 'Réalisation 4')">
-                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none">
-                    <source src="video4.mp4" type="video/mp4">
-                </video>
+                <video muted class="w-full h-28 object-cover rounded-lg pointer-events-none" src="video4.mp4"></video>
                 <p class="text-gray-300 text-center text-sm font-semibold mt-3">Vidéo 4</p>
             </div>
         </div>
@@ -95,9 +86,11 @@
         function changeVideo(src, title) {
             const main = document.getElementById('mainPlayer');
             main.pause();
-            main.querySelector('source').src = src;
+            main.src = src;
             main.load();
-            main.play();
+            main.play().catch(error => {
+                console.log("Lecture automatique bloquée ou fichier introuvable :", error);
+            });
             document.getElementById('mainTitle').textContent = title;
         }
     </script>
